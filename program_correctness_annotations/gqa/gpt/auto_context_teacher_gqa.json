@@ -1,0 +1,732 @@
+[
+  {
+    "question": "Is there a refrigerator in front of the wall made of wood?",
+    "answer": "yes",
+    "predicted_program": "```python\nrefrigerator_patches = image_patch.find('refrigerator')\nwall_patches = image_patch.find('wood wall')\nis_in_front = verify_relationship(refrigerator_patches[0], wall_patches[0], 'in front') if refrigerator_patches and wall_patches else False\nanswer = 'yes' if is_in_front else 'no'\n```",
+    "question_id": "202119903",
+    "imageId": "n500308"
+  },
+  {
+    "question": "What is filled with bird?",
+    "answer": "sky",
+    "predicted_program": "```python\nbird_patches = image_patch.find('bird')\nfilled_object = bird_patches[0].simple_query('What is filled with bird?') if bird_patches else 'unknown'\nanswer = filled_object\n```",
+    "question_id": "20491789",
+    "imageId": "n335542"
+  },
+  {
+    "question": "Is that a small fence?",
+    "answer": "yes",
+    "predicted_program": "```python\nfence_patches = image_patch.find('fence')\nis_small = fence_patches[0].verify_property('small') if fence_patches else False\nanswer = 'yes' if is_small else 'no'\n```",
+    "question_id": "20340484",
+    "imageId": "n513100"
+  },
+  {
+    "question": "Who is posing?",
+    "answer": "girl",
+    "predicted_program": "```python\nposing_patches = image_patch.find('posing')\nposer = posing_patches[0].simple_query('Who is posing?') if posing_patches else 'unknown'\nanswer = poser\n```",
+    "question_id": "20721787",
+    "imageId": "n89148",
+    "error": "API violation",
+    "error explanation": "Posing is not a valid activity."
+  },
+  {
+    "question": "What cooking utensil isn't warm?",
+    "answer": "spatula",
+    "predicted_program": "```python\nutensil_patches = image_patch.find('cooking utensil')\nnot_warm_utensil = utensil_patches[0].verify_property('warm') if utensil_patches else False\nutensil_name = utensil_patches[0].simple_query('What cooking utensil is this?') if not_warm_utensil else 'unknown'\nanswer = utensil_name\n```",
+    "question_id": "201624139",
+    "imageId": "n59676",
+    "error": "Does not answer question",
+    "error explanation": "The utensil should be not warm"
+  },
+  {
+    "question": "Does the shelf have brown color and small size?",
+    "answer": "yes",
+    "predicted_program": "```python\nshelf_patches = image_patch.find('shelf')\nis_brown = shelf_patches[0].verify_property('brown') if shelf_patches else False\nis_small = shelf_patches[0].verify_property('small') if shelf_patches else False\nanswer = 'yes' if is_brown and is_small else 'no'\n```",
+    "question_id": "201935929",
+    "imageId": "n500209"
+  },
+  {
+    "question": "What device is below the artwork?",
+    "answer": "television",
+    "predicted_program": "```python\nartwork_patches = image_patch.find('artwork')\ndevice_patches = artwork_patches[0].crop_position('below', image_patch) if artwork_patches else None\ndevice_name = device_patches.simple_query('What device is this?') if device_patches else 'unknown'\nanswer = device_name\n```",
+    "question_id": "201804661",
+    "imageId": "n51002"
+  },
+  {
+    "question": "Which side is the blender on?",
+    "answer": "right",
+    "predicted_program": "```python\nblender_patches = image_patch.find('blender')\nis_left = verify_relationship(blender_patches[0], image_patch, 'left') if blender_patches else False\nis_right = verify_relationship(blender_patches[0], image_patch, 'right') if blender_patches else False\nanswer = 'left' if is_left else 'right' if is_right else 'unknown'\n```",
+    "question_id": "202144680",
+    "imageId": "n37274"
+  },
+  {
+    "question": "Who is sitting?",
+    "answer": "woman",
+    "predicted_program": "```python\nsitting_patches = image_patch.find('sitting')\nsitter = sitting_patches[0].simple_query('Who is sitting?') if sitting_patches else 'unknown'\nanswer = sitter\n```",
+    "question_id": "202169389",
+    "imageId": "n451187",
+    "error": "API violation",
+    "error explanation": "Sitting is not a valid activity."
+  },
+  {
+    "question": "Is the green flag behind the vehicle made of metal?",
+    "answer": "yes",
+    "predicted_program": "```python\ngreen_flag_patches = image_patch.find('green flag')\nmetal_vehicle_patches = image_patch.find('metal vehicle')\nis_behind = verify_relationship(green_flag_patches[0], metal_vehicle_patches[0], 'behind') if green_flag_patches and metal_vehicle_patches else False\nanswer = 'yes' if is_behind else 'no'\n```",
+    "question_id": "201951711",
+    "imageId": "n256120"
+  },
+  {
+    "question": "Is the man in the bottom or in the top of the picture?",
+    "answer": "top",
+    "predicted_program": "```python\nman_patches = image_patch.find('man')\nis_at_bottom = verify_relationship(man_patches[0], image_patch, 'bottom') if man_patches else False\nis_at_top = verify_relationship(man_patches[0], image_patch, 'top') if man_patches else False\nanswer = 'bottom' if is_at_bottom else 'top' if is_at_top else 'unknown'\n```",
+    "question_id": "20644755",
+    "imageId": "n250821"
+  },
+  {
+    "question": "Is the small cone in front of the machine?",
+    "answer": "yes",
+    "predicted_program": "```python\nsmall_cone_patches = image_patch.find('small cone')\nmachine_patches = image_patch.find('machine')\nis_in_front = verify_relationship(small_cone_patches[0], machine_patches[0], 'in front') if small_cone_patches and machine_patches else False\nanswer = 'yes' if is_in_front else 'no'\n```",
+    "question_id": "20785984",
+    "imageId": "n12404"
+  },
+  {
+    "question": "What is the item of furniture that the bed is in front of?",
+    "answer": "closet",
+    "predicted_program": "```python\nbed_patches = image_patch.find('bed')\nfurniture_patches = bed_patches[0].crop_position('in front', image_patch) if bed_patches else None\nfurniture_name = furniture_patches.simple_query('What is the item of furniture?') if furniture_patches else 'unknown'\nanswer = furniture_name\n```",
+    "question_id": "202023458",
+    "imageId": "n95313",
+    "error": "Does not answer question",
+    "error explanation": "The bed is in front of the furniture, not the other way around."
+  },
+  {
+    "question": "What kind of device is to the left of the phone?",
+    "answer": "computer mouse",
+    "predicted_program": "```python\nphone_patches = image_patch.find('phone')\ndevice_patches = phone_patches[0].crop_position('left', image_patch) if phone_patches else None\ndevice_type = device_patches.simple_query('What kind of device is this?') if device_patches else 'unknown'\nanswer = device_type\n```",
+    "question_id": "201498370",
+    "imageId": "n315887"
+  },
+  {
+    "question": "What animal is the man watching?",
+    "answer": "cat",
+    "predicted_program": "```python\nman_patches = image_patch.find('man')\nanimal_patches = image_patch.find('animal')\nis_watching = verify_relationship(man_patches[0], animal_patches[0], 'watching') if man_patches and animal_patches else False\nanimal_name = animal_patches[0].simple_query('What animal is the man watching?') if is_watching else 'unknown'\nanswer = animal_name\n```",
+    "question_id": "20644781",
+    "imageId": "n250821"
+  },
+  {
+    "question": "What is the animal that is standing on the ground?",
+    "answer": "elephant",
+    "predicted_program": "```python\nstanding_animal_patches = image_patch.find('standing')\nground_patches = image_patch.find('ground')\nis_on_ground = verify_relationship(standing_animal_patches[0], ground_patches[0], 'on') if standing_animal_patches and ground_patches else False\nanimal_name = standing_animal_patches[0].simple_query('What animal is this?') if is_on_ground else 'unknown'\nanswer = animal_name\n```",
+    "question_id": "202286532",
+    "imageId": "n413002",
+    "error": "API violation",
+    "error explanation": "Standing is not a valid activity."
+  },
+  {
+    "question": "Do you see either faucets or cabinets that are modern?",
+    "answer": "yes",
+    "predicted_program": "```python\nfaucet_patches = image_patch.find('modern faucet')\ncabinet_patches = image_patch.find('modern cabinet')\nfaucet_exists = exists(faucet_patches)\ncabinet_exists = exists(cabinet_patches)\nanswer = 'yes' if faucet_exists or cabinet_exists else 'no'\n```",
+    "question_id": "20149819",
+    "imageId": "n65866"
+  },
+  {
+    "question": "What is the name of the meat on the porcelain plate?",
+    "answer": "ham",
+    "predicted_program": "```python\nplate_patches = image_patch.find('porcelain plate')\nmeat_patches = plate_patches[0].crop_position('on', image_patch) if plate_patches else None\nmeat_name = meat_patches.simple_query('What is the meat on the plate called?') if meat_patches else 'unknown'\nanswer = meat_name\n```",
+    "question_id": "20794225",
+    "imageId": "n278453"
+  },
+  {
+    "question": "What plays with the athlete?",
+    "answer": "racket",
+    "predicted_program": "```python\nathlete_patches = image_patch.find('athlete')\nobject_patches = image_patch.find('object')\nis_playing_with = verify_relationship(object_patches[0], athlete_patches[0], 'playing with') if object_patches and athlete_patches else False\nobject_name = object_patches[0].simple_query('What is the object playing with the athlete?') if is_playing_with else 'unknown'\nanswer = object_name\n```",
+    "question_id": "202147854",
+    "imageId": "n194179"
+  },
+  {
+    "question": "What's the shuttle surrounded by?",
+    "answer": "stars",
+    "predicted_program": "```python\nshuttle_patches = image_patch.find('shuttle')\nsurrounding_object = shuttle_patches[0].simple_query('What is the shuttle surrounded by?') if shuttle_patches else 'unknown'\nanswer = surrounding_object\n```",
+    "question_id": "201030390",
+    "imageId": "n54424"
+  },
+  {
+    "question": "What appliance is above the countertop?",
+    "answer": "microwave",
+    "predicted_program": "```python\ncountertop_patches = image_patch.find('countertop')\nappliance_patches = countertop_patches[0].crop_position('above', image_patch) if countertop_patches else None\nappliance_name = appliance_patches.simple_query('What appliance is this?') if appliance_patches else 'unknown'\nanswer = appliance_name\n```",
+    "question_id": "20896577",
+    "imageId": "n548534"
+  },
+  {
+    "question": "Is the chair on the left side?",
+    "answer": "yes",
+    "predicted_program": "```python\nchair_patches = image_patch.find('chair')\nis_on_left = verify_relationship(chair_patches[0], image_patch, 'left') if chair_patches else False\nanswer = 'yes' if is_on_left else 'no'\n```",
+    "question_id": "201067854",
+    "imageId": "n367944"
+  },
+  {
+    "question": "Is the appliance beside the wall metallic and black?",
+    "answer": "no",
+    "predicted_program": "```python\nappliance_patches = image_patch.find('appliance')\nwall_patches = image_patch.find('wall')\nis_beside = verify_relationship(appliance_patches[0], wall_patches[0], 'beside') if appliance_patches and wall_patches else False\nis_metallic = appliance_patches[0].verify_property('metallic') if is_beside else False\nis_black = appliance_patches[0].verify_property('black') if is_beside else False\nanswer = 'yes' if is_metallic and is_black else 'no'\n```",
+    "question_id": "20637345",
+    "imageId": "n184385"
+  },
+  {
+    "question": "What kind of appliance is powerful?",
+    "answer": "stove",
+    "predicted_program": "```python\npowerful_appliance_patches = image_patch.find('powerful appliance')\nappliance_type = powerful_appliance_patches[0].classify('appliance') if powerful_appliance_patches else 'unknown'\nanswer = appliance_type\n```",
+    "question_id": "201637227",
+    "imageId": "n200692"
+  },
+  {
+    "question": "Who is wearing a hat?",
+    "answer": "player",
+    "predicted_program": "```python\nhat_patches = image_patch.find('hat')\nwearer = hat_patches[0].simple_query('Who is wearing a hat?') if hat_patches else 'unknown'\nanswer = wearer\n```",
+    "question_id": "201739317",
+    "imageId": "n485969"
+  },
+  {
+    "question": "Do you think the person that looks young is blond or brunette?",
+    "answer": "blond",
+    "predicted_program": "```python\nyoung_person_patches = image_patch.find('young person')\nis_blond = young_person_patches[0].verify_property('blond') if young_person_patches else False\nis_brunette = young_person_patches[0].verify_property('brunette') if young_person_patches else False\nanswer = 'blond' if is_blond else 'brunette' if is_brunette else 'unknown'\n```",
+    "question_id": "20508636",
+    "imageId": "n511913"
+  },
+  {
+    "question": "The man that is not sad is sitting beside who?",
+    "answer": "boy",
+    "predicted_program": "```python\nnot_sad_man_patches = image_patch.find('not sad man')\nsitting_beside = not_sad_man_patches[0].simple_query('Who are you sitting beside?') if not_sad_man_patches else 'unknown'\nanswer = sitting_beside\n```",
+    "question_id": "2046485",
+    "imageId": "n71728"
+  },
+  {
+    "question": "Are there either any tall men or women?",
+    "answer": "no",
+    "predicted_program": "```python\ntall_man_patches = image_patch.find('tall man')\ntall_woman_patches = image_patch.find('tall woman')\ntall_man_exists = exists(tall_man_patches)\ntall_woman_exists = exists(tall_woman_patches)\nanswer = 'yes' if tall_man_exists or tall_woman_exists else 'no'\n```",
+    "question_id": "20151832",
+    "imageId": "n313060"
+  },
+  {
+    "question": "Does the floor look clean and white?",
+    "answer": "no",
+    "predicted_program": "```python\nfloor_patches = image_patch.find('floor')\nis_clean = floor_patches[0].verify_property('clean') if floor_patches else False\nis_white = floor_patches[0].verify_property('white') if floor_patches else False\nanswer = 'yes' if is_clean and is_white else 'no'\n```",
+    "question_id": "20691508",
+    "imageId": "n153293"
+  },
+  {
+    "question": "Of what material the toilet brush?",
+    "answer": "plastic",
+    "predicted_program": "```python\ntoilet_brush_patches = image_patch.find('toilet brush')\nmaterial = toilet_brush_patches[0].classify('material') if toilet_brush_patches else 'unknown'\nanswer = material\n```",
+    "question_id": "201411240",
+    "imageId": "n415215"
+  },
+  {
+    "question": "What is falling off the floor?",
+    "answer": "sneakers",
+    "predicted_program": "```python\nfloor_patches = image_patch.find('floor')\nfalling_object = floor_patches[0].simple_query('What is falling off the floor?') if floor_patches else 'unknown'\nanswer = falling_object\n```",
+    "question_id": "20644681",
+    "imageId": "n250821"
+  },
+  {
+    "question": "Is the leather belt both black and thick?",
+    "answer": "no",
+    "predicted_program": "```python\nbelt_patches = image_patch.find('leather belt')\nis_black = belt_patches[0].verify_property('black') if belt_patches else False\nis_thick = belt_patches[0].verify_property('thick') if belt_patches else False\nanswer = 'yes' if is_black and is_thick else 'no'\n```",
+    "question_id": "202053220",
+    "imageId": "n334278"
+  },
+  {
+    "question": "What is sitting in front of the wall the artwork is leaning against?",
+    "answer": "stove",
+    "predicted_program": "```python\nwall_patches = image_patch.find('wall')\nartwork_patches = image_patch.find('artwork')\nis_leaning_against = verify_relationship(artwork_patches[0], wall_patches[0], 'leaning against') if artwork_patches and wall_patches else False\nobject_in_front = wall_patches[0].simple_query('What is sitting in front of the wall?') if is_leaning_against else 'unknown'\nanswer = object_in_front\n```",
+    "question_id": "202100898",
+    "imageId": "n280089"
+  },
+  {
+    "question": "Which kind of vehicle is metallic?",
+    "answer": "bus",
+    "predicted_program": "```python\nmetallic_vehicle_patches = image_patch.find('metallic vehicle')\nvehicle_type = metallic_vehicle_patches[0].classify('vehicle') if metallic_vehicle_patches else 'unknown'\nanswer = vehicle_type\n```",
+    "question_id": "2055690",
+    "imageId": "n263180"
+  },
+  {
+    "question": "Which kind of furniture is it?",
+    "answer": "couch",
+    "predicted_program": "```python\nfurniture_patches = image_patch.find('furniture')\nfurniture_type = furniture_patches[0].classify('furniture') if furniture_patches else 'unknown'\nanswer = furniture_type\n```",
+    "question_id": "201030410",
+    "imageId": "n54424"
+  },
+  {
+    "question": "What kind of vegetable isn't round?",
+    "answer": "broccoli",
+    "predicted_program": "```python\nround_vegetable_patches = image_patch.find('round vegetable')\nnot_round_vegetable_patches = filter_img(image_patch.find('vegetable'), 'round')\nvegetable_type = not_round_vegetable_patches[0].classify('vegetable') if not_round_vegetable_patches else None\nanswer = vegetable_type if vegetable_type else 'unknown'\n```",
+    "question_id": "201887166",
+    "imageId": "n429961",
+    "error": "Does not answer question",
+    "error explanation": "The vegetable should be not round."
+  },
+  {
+    "question": "Do you see fences in this photo that are not brown?",
+    "answer": "no",
+    "predicted_program": "```python\nfence_patches = image_patch.find('fence')\nis_brown = fence_patches[0].verify_property('brown') if fence_patches else True\nanswer = 'yes' if fence_patches and not is_brown else 'no'\n```",
+    "question_id": "20978599",
+    "imageId": "n551964"
+  },
+  {
+    "question": "Does the shirt have a different color than the hat?",
+    "answer": "no",
+    "predicted_program": "```python\nshirt_patches = image_patch.find('shirt')\nhat_patches = image_patch.find('hat')\nshirt_color = shirt_patches[0].classify('color') if shirt_patches else None\nhat_color = hat_patches[0].classify('color') if hat_patches else None\nanswer = 'yes' if shirt_color and hat_color and shirt_color != hat_color else 'no'\n```",
+    "question_id": "202223028",
+    "imageId": "n257997"
+  },
+  {
+    "question": "What is the shape of the counter the bottles are on?",
+    "answer": "rectangular",
+    "predicted_program": "```python\nbottle_patches = image_patch.find('bottle')\ncounter_patches = bottle_patches[0].crop_position('on', image_patch) if bottle_patches else None\ncounter_shape = counter_patches.classify('shape') if counter_patches else 'unknown'\nanswer = counter_shape\n```",
+    "question_id": "20752459",
+    "imageId": "n209843",
+    "error": "Contradicts Question",
+    "error explanation": "Does not check if the bottles are on the counter"
+  },
+  {
+    "question": "How large are the books to the right of the wine bottle?",
+    "answer": "small",
+    "predicted_program": "```python\nwine_patches = image_patch.find('wine bottle')\nbook_patches = image_patch.find('book')\nis_right = verify_relationship(book_patches[0], wine_patches[0], 'right') if book_patches and wine_patches else False\nbook_size = book_patches[0].classify('size') if is_right else 'unknown'\nanswer = book_size\n```",
+    "question_id": "20508338",
+    "imageId": "n511913"
+  },
+  {
+    "question": "What shape is the bed below the paintings?",
+    "answer": "rectangular",
+    "predicted_program": "```python\npainting_patches = image_patch.find('painting')\nbed_patches = painting_patches[0].crop_position('below', image_patch) if painting_patches else None\nbed_shape = bed_patches.classify('shape') if bed_patches else 'unknown'\nanswer = bed_shape\n```",
+    "question_id": "201882593",
+    "imageId": "n125122"
+  },
+  {
+    "question": "Which kind of clothing is tight?",
+    "answer": "pants",
+    "predicted_program": "```python\ntight_clothing_patches = image_patch.find('tight clothing')\nclothing_type = tight_clothing_patches[0].classify('clothing') if tight_clothing_patches else None\nanswer = clothing_type if clothing_type else 'unknown'\n```",
+    "question_id": "201739173",
+    "imageId": "n485969"
+  },
+  {
+    "question": "Is the beige shirt short sleeved or maybe long sleeved?",
+    "answer": "long sleeved",
+    "predicted_program": "```python\nshirt_patches = image_patch.find('beige shirt')\nis_short_sleeved = shirt_patches[0].verify_property('short sleeved') if shirt_patches else False\nis_long_sleeved = shirt_patches[0].verify_property('long sleeved') if shirt_patches else False\nanswer = 'short sleeved' if is_short_sleeved else 'long sleeved' if is_long_sleeved else 'unknown'\n```",
+    "question_id": "201760652",
+    "imageId": "n350732"
+  },
+  {
+    "question": "What place is it?",
+    "answer": "pasture",
+    "predicted_program": "```python\nplace_patches = image_patch.find('place')\nplace_name = place_patches[0].simple_query('What place is this?') if place_patches else 'unknown'\nanswer = place_name\n```",
+    "question_id": "20865357",
+    "imageId": "n143935"
+  },
+  {
+    "question": "Who do you think is on the skateboard?",
+    "answer": "boy",
+    "predicted_program": "```python\nskateboard_patches = image_patch.find('skateboard')\nrider = skateboard_patches[0].simple_query('Who is on the skateboard?') if skateboard_patches else 'unknown'\nanswer = rider\n```",
+    "question_id": "20894192",
+    "imageId": "n272313"
+  },
+  {
+    "question": "On which side is the blue toothbrush?",
+    "answer": "right",
+    "predicted_program": "```python\nblue_toothbrush_patches = image_patch.find('blue toothbrush')\nis_left = verify_relationship(blue_toothbrush_patches[0], image_patch, 'left') if blue_toothbrush_patches else False\nis_right = verify_relationship(blue_toothbrush_patches[0], image_patch, 'right') if blue_toothbrush_patches else False\nanswer = 'left' if is_left else 'right' if is_right else 'unknown'\n```",
+    "question_id": "201770682",
+    "imageId": "n310625"
+  },
+  {
+    "question": "Is there a toaster above the drawer?",
+    "answer": "yes",
+    "predicted_program": "```python\ntoaster_patches = image_patch.find('toaster')\ndrawer_patches = image_patch.find('drawer')\nis_above = verify_relationship(toaster_patches[0], drawer_patches[0], 'above') if toaster_patches and drawer_patches else False\nanswer = 'yes' if is_above else 'no'\n```",
+    "question_id": "20317289",
+    "imageId": "n350766"
+  },
+  {
+    "question": "Which kind of furniture is the wallet lying on top of?",
+    "answer": "bed",
+    "predicted_program": "```python\nwallet_patches = image_patch.find('wallet')\nfurniture_patches = wallet_patches[0].crop_position('on', image_patch) if wallet_patches else None\nfurniture_name = furniture_patches.simple_query('What kind of furniture is this?') if furniture_patches else 'unknown'\nanswer = furniture_name\n```",
+    "question_id": "20856728",
+    "imageId": "n293477"
+  },
+  {
+    "question": "What type of furniture is the woman in front of?",
+    "answer": "table",
+    "predicted_program": "```python\nwoman_patches = image_patch.find('woman')\nfurniture_patches = woman_patches[0].crop_position('in front', image_patch) if woman_patches else None\nfurniture_type = furniture_patches.classify('furniture') if furniture_patches else 'unknown'\nanswer = furniture_type\n```",
+    "question_id": "20508743",
+    "imageId": "n511913",
+    "error": "Does not answer question",
+    "error explanation": "The furniture is behind the woman, not in front of her."
+  },
+  {
+    "question": "Is the electric dishwasher behind the floor?",
+    "answer": "yes",
+    "predicted_program": "```python\ndishwasher_patches = image_patch.find('electric dishwasher')\nfloor_patches = image_patch.find('floor')\nis_behind = verify_relationship(dishwasher_patches[0], floor_patches[0], 'behind') if dishwasher_patches and floor_patches else False\nanswer = 'yes' if is_behind else 'no'\n```",
+    "question_id": "201663602",
+    "imageId": "n35676"
+  },
+  {
+    "question": "Is the open purse in the bottom part or in the top of the photo?",
+    "answer": "bottom",
+    "predicted_program": "```python\npurse_patches = image_patch.find('open purse')\nis_at_bottom = verify_relationship(purse_patches[0], image_patch, 'bottom') if purse_patches else False\nis_at_top = verify_relationship(purse_patches[0], image_patch, 'top') if purse_patches else False\nanswer = 'bottom' if is_at_bottom else 'top' if is_at_top else 'unknown'\n```",
+    "question_id": "20349836",
+    "imageId": "n468864"
+  },
+  {
+    "question": "What kind of furniture is to the left of the drink?",
+    "answer": "chair",
+    "predicted_program": "```python\ndrink_patches = image_patch.find('drink')\nfurniture_patches = drink_patches[0].crop_position('left', image_patch) if drink_patches else None\nfurniture_type = furniture_patches.classify('furniture') if furniture_patches else 'unknown'\nanswer = furniture_type\n```",
+    "question_id": "20783546",
+    "imageId": "n355339"
+  },
+  {
+    "question": "What is the man doing?",
+    "answer": "standing",
+    "predicted_program": "```python\nman_patches = image_patch.find('man')\naction = man_patches[0].simple_query('What is the man doing?') if man_patches else 'unknown'\nanswer = action\n```",
+    "question_id": "202012816",
+    "imageId": "n326988"
+  },
+  {
+    "question": "Who is the large animal looking down at?",
+    "answer": "child",
+    "predicted_program": "```python\nlarge_animal_patches = image_patch.find('large animal')\nis_looking_down = large_animal_patches[0].verify_property('looking down') if large_animal_patches else False\nobject_looked_at = large_animal_patches[0].simple_query('Who is the large animal looking down at?') if is_looking_down else 'unknown'\nanswer = object_looked_at\n```",
+    "question_id": "201795135",
+    "imageId": "n119944"
+  },
+  {
+    "question": "Where do the brown animals stand on?",
+    "answer": "field",
+    "predicted_program": "```python\nbrown_animal_patches = image_patch.find('brown animal')\nstanding_object = brown_animal_patches[0].simple_query('Where do the brown animals stand on?') if brown_animal_patches else 'unknown'\nanswer = standing_object\n```",
+    "question_id": "201639562",
+    "imageId": "n497789"
+  },
+  {
+    "question": "Is the sidewalk made of cobblestone or stone?",
+    "answer": "stone",
+    "predicted_program": "```python\nsidewalk_patches = image_patch.find('sidewalk')\ncobblestone_material = sidewalk_patches[0].classify('material') if sidewalk_patches else None\nstone_material = sidewalk_patches[0].verify_property('stone') if sidewalk_patches else False\nanswer = 'cobblestone' if cobblestone_material == 'cobblestone' else 'stone' if stone_material else 'unknown'\n```",
+    "question_id": "20244725",
+    "imageId": "n19152"
+  },
+  {
+    "question": "Is the street wide?",
+    "answer": "yes",
+    "predicted_program": "```python\nstreet_patches = image_patch.find('street')\nis_wide = street_patches[0].verify_property('wide') if street_patches else False\nanswer = 'yes' if is_wide else 'no'\n```",
+    "question_id": "201346744",
+    "imageId": "n131634"
+  },
+  {
+    "question": "What is the color of the router that looks rectangular?",
+    "answer": "white",
+    "predicted_program": "```python\nrouter_patches = image_patch.find('router')\nis_rectangular = router_patches[0].verify_property('rectangular') if router_patches else False\nrouter_color = router_patches[0].classify('color') if is_rectangular else None\nanswer = router_color if router_color else 'unknown'\n```",
+    "question_id": "201902528",
+    "imageId": "n435808"
+  },
+  {
+    "question": "Is the cheese on a bread?",
+    "answer": "no",
+    "predicted_program": "```python\ncheese_patches = image_patch.find('cheese')\nbread_patches = image_patch.find('bread')\nis_on_bread = verify_relationship(cheese_patches[0], bread_patches[0], 'on') if cheese_patches and bread_patches else False\nanswer = 'yes' if is_on_bread else 'no'\n```",
+    "question_id": "202037119",
+    "imageId": "n200225"
+  },
+  {
+    "question": "Do you see any wide boat?",
+    "answer": "yes",
+    "predicted_program": "```python\nwide_boat_patches = image_patch.find('wide boat')\nwide_boat_exists = exists(wide_boat_patches)\nanswer = 'yes' if wide_boat_exists else 'no'\n```",
+    "question_id": "202117035",
+    "imageId": "n48494"
+  },
+  {
+    "question": "What color is the huge animal?",
+    "answer": "brown",
+    "predicted_program": "```python\nhuge_animal_patches = image_patch.find('huge animal')\ncolor = huge_animal_patches[0].classify('color') if huge_animal_patches else None\nanswer = color if color else 'unknown'\n```",
+    "question_id": "20542945",
+    "imageId": "n100552"
+  },
+  {
+    "question": "Is the manhole cover metallic and round?",
+    "answer": "yes",
+    "predicted_program": "```python\nmanhole_cover_patches = image_patch.find('manhole cover')\nis_metallic = manhole_cover_patches[0].verify_property('metallic') if manhole_cover_patches else False\nis_round = manhole_cover_patches[0].verify_property('round') if manhole_cover_patches else False\nanswer = 'yes' if is_metallic and is_round else 'no'\n```",
+    "question_id": "20340856",
+    "imageId": "n346247"
+  },
+  {
+    "question": "What kind of furniture is not closed?",
+    "answer": "chair",
+    "predicted_program": "```python\nclosed_furniture_patches = image_patch.find('closed furniture')\nnot_closed_furniture_patches = filter_img(image_patch.find('furniture'), 'closed')\nfurniture_type = not_closed_furniture_patches[0].classify('furniture') if not_closed_furniture_patches else None\nanswer = furniture_type if furniture_type else 'unknown'\n```",
+    "question_id": "202023280",
+    "imageId": "n95313",
+    "error": "Does not answer question",
+    "error explanation": "The furniture should be not closed."
+  },
+  {
+    "question": "Is the table made of wood large or small?",
+    "answer": "large",
+    "predicted_program": "```python\ntable_patches = image_patch.find('wooden table')\nis_large = table_patches[0].verify_property('large') if table_patches else False\nis_small = table_patches[0].verify_property('small') if table_patches else False\nanswer = 'large' if is_large else 'small' if is_small else 'unknown'\n```",
+    "question_id": "202226049",
+    "imageId": "n336443"
+  },
+  {
+    "question": "Which kind of watercraft is assorted?",
+    "answer": "boats",
+    "predicted_program": "```python\nwatercraft_patches = image_patch.find('assorted watercraft')\nwatercraft_type = watercraft_patches[0].classify('watercraft') if watercraft_patches else 'unknown'\nanswer = watercraft_type\n```",
+    "question_id": "201765941",
+    "imageId": "n488874"
+  },
+  {
+    "question": "Who is wearing a shirt?",
+    "answer": "girl",
+    "predicted_program": "```python\nshirt_patches = image_patch.find('shirt')\nwearer = shirt_patches[0].simple_query('Who is wearing?') if shirt_patches else 'unknown'\nanswer = wearer\n```",
+    "question_id": "201766579",
+    "imageId": "n528403"
+  },
+  {
+    "question": "Is the cloud different in color than the sky?",
+    "answer": "yes",
+    "predicted_program": "```python\ncloud_patches = image_patch.find('cloud')\nsky_patches = image_patch.find('sky')\ncloud_color = cloud_patches[0].classify('color') if cloud_patches else None\nsky_color = sky_patches[0].classify('color') if sky_patches else None\nanswer = 'yes' if cloud_color and sky_color and cloud_color != sky_color else 'no'\n```",
+    "question_id": "201972701",
+    "imageId": "n541482"
+  },
+  {
+    "question": "Who is standing?",
+    "answer": "girl",
+    "predicted_program": "```python\nstanding_patches = image_patch.find('standing')\nwho_is_standing = standing_patches[0].simple_query('Who is standing?') if standing_patches else 'unknown'\nanswer = who_is_standing\n```",
+    "question_id": "20262617",
+    "imageId": "n172618",
+    "error": "API violation",
+    "error explanation": "Standing is not an object."
+  },
+  {
+    "question": "How old is the man the polo shirt is worn on?",
+    "answer": "old",
+    "predicted_program": "```python\npolo_shirt_patches = image_patch.find('polo shirt')\nman_patches = image_patch.find('man')\nis_worn_on = verify_relationship(man_patches[0], polo_shirt_patches[0], 'wearing') if man_patches and polo_shirt_patches else False\nman_age = man_patches[0].simple_query('How old is the man?') if is_worn_on else 'unknown'\nanswer = man_age\n```",
+    "question_id": "201826551",
+    "imageId": "n59627"
+  },
+  {
+    "question": "Is the wall made of the same material as the SUV?",
+    "answer": "no",
+    "predicted_program": "```python\nwall_patches = image_patch.find('wall')\nsuv_patches = image_patch.find('SUV')\nwall_material = wall_patches[0].classify('material') if wall_patches else None\nsuv_material = suv_patches[0].classify('material') if suv_patches else None\nanswer = 'yes' if wall_material and suv_material and wall_material == suv_material else 'no'\n```",
+    "question_id": "20320212",
+    "imageId": "n206358"
+  },
+  {
+    "question": "That American flag has what color?",
+    "answer": "blue",
+    "predicted_program": "```python\nflag_patches = image_patch.find('American flag')\ncolor = flag_patches[0].classify('color') if flag_patches else None\nanswer = color if color else 'unknown'\n```",
+    "question_id": "201188253",
+    "imageId": "n483840"
+  },
+  {
+    "question": "What vehicle is the fence in front of?",
+    "answer": "car",
+    "predicted_program": "```python\nfence_patches = image_patch.find('fence')\nvehicle_patches = fence_patches[0].crop_position('in front', image_patch) if fence_patches else None\nvehicle_name = vehicle_patches.simple_query('What vehicle is this?') if vehicle_patches else 'unknown'\nanswer = vehicle_name\n```",
+    "question_id": "20330481",
+    "imageId": "n260521",
+    "error": "Does not answer question",
+    "error explanation": "The fence is in front of the vehicle, not the other way around."
+  },
+  {
+    "question": "What is the player wearing?",
+    "answer": "hat",
+    "predicted_program": "```python\nplayer_patches = image_patch.find('player')\nwearing_item = player_patches[0].simple_query('What is the player wearing?') if player_patches else 'unknown'\nanswer = wearing_item\n```",
+    "question_id": "201739320",
+    "imageId": "n485969"
+  },
+  {
+    "question": "Are there any pillows to the right of the curtain above the bed?",
+    "answer": "no",
+    "predicted_program": "```python\npillow_patches = image_patch.find('pillow')\ncurtain_patches = image_patch.find('curtain')\nbed_patches = image_patch.find('bed')\nis_above = verify_relationship(curtain_patches[0], bed_patches[0], 'above') if curtain_patches and bed_patches else False\nis_right = verify_relationship(pillow_patches[0], curtain_patches[0], 'right') if pillow_patches and curtain_patches and is_above else False\nanswer = 'yes' if is_right else 'no'\n```",
+    "question_id": "20753194",
+    "imageId": "n49438",
+    "error": "Does not answer question",
+    "error explanation": "The pillow is to the right of the curtain and the program evaluates if the curtain is to the right of the bed.."
+  },
+  {
+    "question": "What is the color of the utensil that lies next to the pens?",
+    "answer": "gray",
+    "predicted_program": "```python\nutensil_patches = image_patch.find('utensil')\npen_patches = image_patch.find('pens')\nis_next_to = verify_relationship(utensil_patches[0], pen_patches[0], 'next to') if utensil_patches and pen_patches else False\nutensil_color = utensil_patches[0].classify('color') if is_next_to else None\nanswer = utensil_color if utensil_color else 'unknown'\n```",
+    "question_id": "20857010",
+    "imageId": "n293477"
+  },
+  {
+    "question": "What is the vehicle that is below the signal light that is black?",
+    "answer": "suv",
+    "predicted_program": "```python\nsignal_light_patches = image_patch.find('signal light')\nblack_vehicle_patches = image_patch.find('black vehicle')\nis_below = verify_relationship(black_vehicle_patches[0], signal_light_patches[0], 'below') if black_vehicle_patches and signal_light_patches else False\nvehicle_name = black_vehicle_patches[0].simple_query('What vehicle is this?') if is_below else 'unknown'\nanswer = vehicle_name\n```",
+    "question_id": "201109297",
+    "imageId": "n167164",
+    "error": "Does not answer question",
+    "error explanation": "The relationship evaluates if the signal light is below the vehicle."
+  },
+  {
+    "question": "What is the animal that is looking down at the person that is sitting next to the chicken called?",
+    "answer": "elephant",
+    "predicted_program": "```python\nperson_patches = image_patch.find('person sitting next to the chicken')\nanimal_patches = image_patch.find('animal looking down')\nis_looking_down = verify_relationship(animal_patches[0], person_patches[0], 'down') if animal_patches and person_patches else False\nanimal_name = animal_patches[0].simple_query('What is the animal called?') if is_looking_down else 'unknown'\nanswer = animal_name\n```",
+    "question_id": "201795132",
+    "imageId": "n119944"
+  },
+  {
+    "question": "Does the flower look yellow?",
+    "answer": "no",
+    "predicted_program": "```python\nflower_patches = image_patch.find('flower')\nis_yellow = flower_patches[0].verify_property('yellow') if flower_patches else False\nanswer = 'yes' if is_yellow else 'no'\n```",
+    "question_id": "20810852",
+    "imageId": "n167552"
+  },
+  {
+    "question": "Is the male person to the right of a cow?",
+    "answer": "no",
+    "predicted_program": "```python\nmale_person_patches = image_patch.find('male person')\ncow_patches = image_patch.find('cow')\nis_right = verify_relationship(male_person_patches[0], cow_patches[0], 'right') if male_person_patches and cow_patches else False\nanswer = 'yes' if is_right else 'no'\n```",
+    "question_id": "201976943",
+    "imageId": "n279173"
+  },
+  {
+    "question": "Does the book look closed?",
+    "answer": "yes",
+    "predicted_program": "```python\nbook_patches = image_patch.find('book')\nis_closed = book_patches[0].verify_property('closed') if book_patches else False\nanswer = 'yes' if is_closed else 'no'\n```",
+    "question_id": "20381490",
+    "imageId": "n398257"
+  },
+  {
+    "question": "Does the floor look blue?",
+    "answer": "no",
+    "predicted_program": "```python\nfloor_patches = image_patch.find('floor')\nis_blue = floor_patches[0].verify_property('blue') if floor_patches else False\nanswer = 'yes' if is_blue else 'no'\n```",
+    "question_id": "201393419",
+    "imageId": "n305495"
+  },
+  {
+    "question": "What is the fruit that the cup is behind of?",
+    "answer": "orange",
+    "predicted_program": "```python\ncup_patches = image_patch.find('cup')\nfruit_patches = cup_patches[0].crop_position('behind', image_patch) if cup_patches else None\nfruit_name = fruit_patches.simple_query('What is the fruit?') if fruit_patches else 'unknown'\nanswer = fruit_name\n```",
+    "question_id": "201479320",
+    "imageId": "n181210",
+    "error": "Does not answer question",
+    "error explanation": "The program crops behind the cup, not behind the fruit."
+  },
+  {
+    "question": "What is the curtain in front of?",
+    "answer": "window",
+    "predicted_program": "```python\ncurtain_patches = image_patch.find('curtain')\nobject_in_front = curtain_patches[0].simple_query('What is the curtain in front of?') if curtain_patches else 'unknown'\nanswer = object_in_front\n```",
+    "question_id": "201175275",
+    "imageId": "n357784"
+  },
+  {
+    "question": "The plane above the mountain is higher than what?",
+    "answer": "bridge",
+    "predicted_program": "```python\nplane_patches = image_patch.find('plane')\nmountain_patches = image_patch.find('mountain')\nis_above = verify_relationship(plane_patches[0], mountain_patches[0], 'above') if plane_patches and mountain_patches else False\nhigher_than = plane_patches[0].simple_query('What is the plane higher than?') if is_above else 'unknown'\nanswer = higher_than\n```",
+    "question_id": "20299677",
+    "imageId": "n195925"
+  },
+  {
+    "question": "What is the device that is not silver?",
+    "answer": "keyboard",
+    "predicted_program": "```python\nsilver_device_patches = image_patch.find('silver device')\nnot_silver_device_patches = filter_img(image_patch.find('device'), 'silver')\ndevice_name = not_silver_device_patches[0].classify('device') if not_silver_device_patches else 'unknown'\nanswer = device_name\n```",
+    "question_id": "201902747",
+    "imageId": "n435808",
+    "error": "Does not answer question",
+    "error explanation": "The device should be not silver."
+  },
+  {
+    "question": "Who is using the skateboard?",
+    "answer": "skater",
+    "predicted_program": "```python\nskateboard_patches = image_patch.find('skateboard')\nuser = skateboard_patches[0].simple_query('Who is using the skateboard?') if skateboard_patches else 'unknown'\nanswer = user\n```",
+    "question_id": "20588925",
+    "imageId": "n258500"
+  },
+  {
+    "question": "What is in front of the table that is to the left of the stroller?",
+    "answer": "chair",
+    "predicted_program": "```python\nstroller_patches = image_patch.find('stroller')\ntable_patches = image_patch.find('table')\nis_left = verify_relationship(table_patches[0], stroller_patches[0], 'left') if table_patches and stroller_patches else False\nobject_in_front = table_patches[0].simple_query('What is in front of the table?') if is_left else 'unknown'\nanswer = object_in_front\n```",
+    "question_id": "201758331",
+    "imageId": "n4777"
+  },
+  {
+    "question": "Does the ground look brown and rocky?",
+    "answer": "yes",
+    "predicted_program": "```python\nground_patches = image_patch.find('ground')\nis_brown = ground_patches[0].verify_property('brown') if ground_patches else False\nis_rocky = ground_patches[0].verify_property('rocky') if ground_patches else False\nanswer = 'yes' if is_brown and is_rocky else 'no'\n```",
+    "question_id": "201185951",
+    "imageId": "n494918"
+  },
+  {
+    "question": "Does the bat look hard and metallic?",
+    "answer": "no",
+    "predicted_program": "```python\nbat_patches = image_patch.find('bat')\nis_hard = bat_patches[0].verify_property('hard') if bat_patches else False\nis_metallic = bat_patches[0].verify_property('metallic') if bat_patches else False\nanswer = 'yes' if is_hard and is_metallic else 'no'\n```",
+    "question_id": "201156041",
+    "imageId": "n146522"
+  },
+  {
+    "question": "What is the sweet dessert sitting beside?",
+    "answer": "cookie",
+    "predicted_program": "```python\ndessert_patches = image_patch.find('sweet dessert')\nbeside_patches = dessert_patches[0].crop_position('beside', image_patch) if dessert_patches else None\nbeside_name = beside_patches.simple_query('What is the sweet dessert sitting beside?') if beside_patches else 'unknown'\nanswer = beside_name\n```",
+    "question_id": "201988043",
+    "imageId": "n470131"
+  },
+  {
+    "question": "Who is in front of the people near the trees?",
+    "answer": "boy",
+    "predicted_program": "```python\npeople_patches = image_patch.find('people near the trees')\nobject_patches = people_patches[0].crop_position('in front', image_patch) if people_patches else None\nwho_is_in_front = object_patches.simple_query('Who is in front of the people?') if object_patches else 'unknown'\nanswer = who_is_in_front\n```",
+    "question_id": "20412150",
+    "imageId": "n531359"
+  },
+  {
+    "question": "Who is wearing a shirt?",
+    "answer": "man",
+    "predicted_program": "```python\nshirt_patches = image_patch.find('shirt')\nwearer = shirt_patches[0].simple_query('Who is wearing?') if shirt_patches else 'unknown'\nanswer = wearer\n```",
+    "question_id": "20891704",
+    "imageId": "n347706"
+  },
+  {
+    "question": "What shape is that watch?",
+    "answer": "square",
+    "predicted_program": "```python\nwatch_patches = image_patch.find('watch')\nwatch_shape = watch_patches[0].classify('shape') if watch_patches else 'unknown'\nanswer = watch_shape\n```",
+    "question_id": "201640486",
+    "imageId": "n235859"
+  },
+  {
+    "question": "Which material was used to make the pipe, plastic or chrome?",
+    "answer": "plastic",
+    "predicted_program": "```python\npipe_patches = image_patch.find('pipe')\nis_plastic = pipe_patches[0].verify_property('plastic') if pipe_patches else False\nis_chrome = pipe_patches[0].verify_property('chrome') if pipe_patches else False\nanswer = 'plastic' if is_plastic else 'chrome' if is_chrome else 'unknown'\n```",
+    "question_id": "201429134",
+    "imageId": "n64959"
+  },
+  {
+    "question": "Are the leaves still?",
+    "answer": "yes",
+    "predicted_program": "```python\nleaf_patches = image_patch.find('leaf')\nare_still = leaf_patches[0].verify_property('still') if leaf_patches else False\nanswer = 'yes' if are_still else 'no'\n```",
+    "question_id": "20797620",
+    "imageId": "n16656"
+  },
+  {
+    "question": "Where is the skier that is not short standing on?",
+    "answer": "ground",
+    "predicted_program": "```python\nskier_patches = image_patch.find('skier not short')\nstanding_object = skier_patches[0].simple_query('What is the skier standing on?') if skier_patches else 'unknown'\nanswer = standing_object\n```",
+    "question_id": "201412511",
+    "imageId": "n143672"
+  },
+  {
+    "question": "Which kind of clothing is heavy?",
+    "answer": "coats",
+    "predicted_program": "```python\nheavy_clothing_patches = image_patch.find('heavy clothing')\nclothing_type = heavy_clothing_patches[0].classify('clothing') if heavy_clothing_patches else None\nanswer = clothing_type if clothing_type else 'unknown'\n```",
+    "question_id": "201759216",
+    "imageId": "n150962"
+  },
+  {
+    "question": "Do you think the cupboards made of wood are closed or open?",
+    "answer": "closed",
+    "predicted_program": "```python\nwood_cupboard_patches = image_patch.find('wood cupboard')\nis_closed = wood_cupboard_patches[0].verify_property('closed') if wood_cupboard_patches else False\nis_open = wood_cupboard_patches[0].verify_property('open') if wood_cupboard_patches else False\nanswer = 'closed' if is_closed else 'open' if is_open else 'unknown'\n```",
+    "question_id": "201623359",
+    "imageId": "n501609"
+  },
+  {
+    "question": "In which part is the old person?",
+    "answer": "right",
+    "predicted_program": "```python\nold_person_patches = image_patch.find('old person')\nis_left = verify_relationship(old_person_patches[0], image_patch, 'left') if old_person_patches else False\nis_right = verify_relationship(old_person_patches[0], image_patch, 'right') if old_person_patches else False\nis_top = verify_relationship(old_person_patches[0], image_patch, 'top') if old_person_patches else False\nis_bottom = verify_relationship(old_person_patches[0], image_patch, 'bottom') if old_person_patches else False\nanswer = 'left' if is_left else 'right' if is_right else 'top' if is_top else 'bottom' if is_bottom else 'unknown'\n```",
+    "question_id": "20473137",
+    "imageId": "n126891"
+  },
+  {
+    "question": "What is the grass in front of?",
+    "answer": "rocks",
+    "predicted_program": "```python\ngrass_patches = image_patch.find('grass')\nis_in_front = verify_relationship(grass_patches[0], image_patch, 'in front') if grass_patches else False\nobject_in_front = grass_patches[0].simple_query('What is the grass in front of?') if is_in_front else 'unknown'\nanswer = object_in_front\n```",
+    "question_id": "202156792",
+    "imageId": "n543966"
+  }
+]

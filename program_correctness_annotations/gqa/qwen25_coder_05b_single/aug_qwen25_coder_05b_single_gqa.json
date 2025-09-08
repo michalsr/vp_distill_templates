@@ -1,0 +1,6164 @@
+[
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "wall (10)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "wood"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "refrigerator,in front of,s (0)"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          2
+        ],
+        "argument": "?"
+      }
+    ],
+    "entailed": [
+      "202119808"
+    ],
+    "equivalent": [
+      "202119903"
+    ],
+    "question": "Is there a refrigerator in front of the wall made of wood?",
+    "imageId": "n500308",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-wall_refrigerator"
+    },
+    "answer": "yes",
+    "semanticStr": "select: wall (10)->filter material: wood [0]->relate: refrigerator,in front of,s (0) [1]->exist: ? [2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "11": "10",
+        "8": "10",
+        "3": "0"
+      },
+      "fullAnswer": {
+        "9": "10",
+        "4": "0"
+      }
+    },
+    "types": {
+      "detailed": "existRelS",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, there is a refrigerator in front of the wall.",
+    "question_id": "202119903",
+    "predicted": "# Is there a refrigerator in front of the wall made of wood?var1=image_patch.find('refrigerator')\nvar2=image_patch.find('wooden wall')\nvar3=verify_relationship(var1[0], var2[0], 'in front') if var1 and var2 else False\nvar4=exists(var1) if var3 else False\nanswer='yes' if var4 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "bird (0)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,filled with,s (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "20491789"
+    ],
+    "question": "What is filled with bird?",
+    "imageId": "n335542",
+    "isBalanced": true,
+    "groups": {
+      "global": "nature environment",
+      "local": "14-bird_filled with,s"
+    },
+    "answer": "sky",
+    "semanticStr": "select: bird (0)->relate: _,filled with,s (1) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "4": "0"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "5": "0"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The sky is filled with bird.",
+    "question_id": "20491789",
+    "predicted": "# What is filled with bird?var1=image_patch.find('bird')\nvar2=var1[0].simple_query('What is filled with bird?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "fence (1)"
+      },
+      {
+        "operation": "verify size",
+        "dependencies": [
+          0
+        ],
+        "argument": "small"
+      }
+    ],
+    "entailed": [
+      "20340466",
+      "20340485",
+      "20340469",
+      "20340478",
+      "20340483",
+      "20340467",
+      "20340488",
+      "20340472",
+      "20340473",
+      "20340470",
+      "20340471",
+      "20340476",
+      "20340477",
+      "20340474",
+      "20340475"
+    ],
+    "equivalent": [
+      "20340484"
+    ],
+    "question": "Is that a small fence?",
+    "imageId": "n513100",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-fence_small"
+    },
+    "answer": "yes",
+    "semanticStr": "select: fence (1)->verify size: small [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "1"
+      },
+      "fullAnswer": {
+        "5": "1"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrThis",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, that is a small fence.",
+    "question_id": "20340484",
+    "predicted": "# Is that a small fence?var1=image_patch.find('small fence')\nvar2=var1[0].verify_property('small') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "person (1)"
+      },
+      {
+        "operation": "filter activity",
+        "dependencies": [
+          0
+        ],
+        "argument": "posing"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "20721787"
+    ],
+    "question": "Who is posing?",
+    "imageId": "n89148",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "posing"
+    },
+    "answer": "girl",
+    "semanticStr": "select: person (1)->filter activity: posing [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "1"
+      }
+    },
+    "types": {
+      "detailed": "activityWho",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The girl is posing.",
+    "question_id": "20721787",
+    "predicted": "# Who is posing?var1=image_patch.find('posing')\nvar2=var1[0].simple_query('Who is posing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cooking utensil (6)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(warm)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201624243",
+      "201624244",
+      "201624138"
+    ],
+    "equivalent": [
+      "201624139"
+    ],
+    "question": "What cooking utensil isn't warm?",
+    "imageId": "n59676",
+    "isBalanced": true,
+    "groups": {
+      "global": "cooking utensil",
+      "local": "12q-cooking utensil_n#warm"
+    },
+    "answer": "spatula",
+    "semanticStr": "select: cooking utensil (6)->filter: not(warm) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {
+        "1:3": "5"
+      },
+      "fullAnswer": {
+        "1:3": "5",
+        "5": "6"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The cooking utensil is a spatula.",
+    "question_id": "201624139",
+    "predicted": "# What cooking utensil isn't warm?var1=image_patch.find('warm cooking utensil')\nvar2=filter_img(image_patch.find('cooking utensil'), 'warm')\nvar3=var2[0].classify('cooking utensil') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shelf (2)"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          0
+        ],
+        "argument": "brown"
+      },
+      {
+        "operation": "verify size",
+        "dependencies": [
+          0
+        ],
+        "argument": "small "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          1,
+          2
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "201935918",
+      "201935928",
+      "201935922",
+      "201935923",
+      "201935920",
+      "201935921",
+      "201935926",
+      "201935927",
+      "201935924",
+      "201935925",
+      "201935948",
+      "201935944",
+      "201935946",
+      "201935940",
+      "201935941",
+      "201935942",
+      "201935943",
+      "201935917",
+      "201935916",
+      "201935913",
+      "201935939",
+      "201935938",
+      "201935915",
+      "201935914",
+      "201935935",
+      "201935934",
+      "201935937",
+      "201935936",
+      "201935930",
+      "201935933",
+      "201935919"
+    ],
+    "equivalent": [
+      "201935928",
+      "201935929",
+      "201935927"
+    ],
+    "question": "Does the shelf have brown color and small size?",
+    "imageId": "n500209",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-brown_small"
+    },
+    "answer": "yes",
+    "semanticStr": "select: shelf (2)->verify color: brown [0]->verify size: small  [0]->and:  [1, 2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "2"
+      },
+      "fullAnswer": {
+        "2": "2"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrs",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "Yes, the shelf is brown and small.",
+    "question_id": "201935929",
+    "predicted": "# Does the shelf have brown color and small size?var1=image_patch.find('shelf')\nvar2=var1[0].verify_property('brown') if var1 else False\nvar3=var1[0].verify_property('small') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "artwork (10)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "device,below,s (6)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201804662",
+      "201804663",
+      "201804660",
+      "201804533"
+    ],
+    "equivalent": [
+      "201804661"
+    ],
+    "question": "What device is below the artwork?",
+    "imageId": "n51002",
+    "isBalanced": true,
+    "groups": {
+      "global": "device",
+      "local": "15-artwork_below,s"
+    },
+    "answer": "television",
+    "semanticStr": "select: artwork (10)->relate: device,below,s (6) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {
+        "1": "6"
+      },
+      "fullAnswer": {
+        "1": "6",
+        "4": "6"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The device is a television.",
+    "question_id": "201804661",
+    "predicted": "# What device is below the artwork?var1=image_patch.find('artwork')\nvar2=var1[0].crop_position('below', image_patch) if var1 else None\nvar3=var2.simple_query('What device is this?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "blender (8)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "hposition"
+      }
+    ],
+    "entailed": [
+      "202144677",
+      "202144676",
+      "202144679",
+      "202144678"
+    ],
+    "equivalent": [
+      "202144679",
+      "202144680"
+    ],
+    "question": "Which side is the blender on?",
+    "imageId": "n37274",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "10q-blender_hposition"
+    },
+    "answer": "right",
+    "semanticStr": "select: blender (8)->query: hposition [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "8"
+      },
+      "fullAnswer": {
+        "1": "8"
+      }
+    },
+    "types": {
+      "detailed": "positionQuery",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The blender is on the right of the image.",
+    "question_id": "202144680",
+    "predicted": "# Which side is the blender on?var1=image_patch.find('blender')\nvar2=verify_relationship(var1[0], image_patch, 'left') if var1 else False\nvar3=verify_relationship(var1[0], image_patch, 'right') if var1 else False\nanswer='left' if var2 else 'right' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "person (9)"
+      },
+      {
+        "operation": "filter pose",
+        "dependencies": [
+          0
+        ],
+        "argument": "sitting"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202169369",
+      "202169372"
+    ],
+    "equivalent": [
+      "202169389"
+    ],
+    "question": "Who is sitting?",
+    "imageId": "n451187",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "sitting"
+    },
+    "answer": "woman",
+    "semanticStr": "select: person (9)->filter pose: sitting [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "9"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "9"
+      }
+    },
+    "types": {
+      "detailed": "activityWho",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The woman is sitting.",
+    "question_id": "202169389",
+    "predicted": "# Who is sitting?var1=image_patch.find('sitting')\nvar2=var1[0].simple_query('Who is sitting?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "flag (17)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "green"
+      },
+      {
+        "operation": "verify rel",
+        "dependencies": [
+          1
+        ],
+        "argument": "van,behind,o (16)"
+      }
+    ],
+    "entailed": [
+      "201951710",
+      "201951775",
+      "201951774"
+    ],
+    "equivalent": [
+      "201951711"
+    ],
+    "question": "Is the green flag behind the vehicle made of metal?",
+    "imageId": "n256120",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-flag_van"
+    },
+    "answer": "yes",
+    "semanticStr": "select: flag (17)->filter color: green [0]->verify rel: van,behind,o (16) [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "9": "16",
+        "2:4": "17",
+        "6": "16"
+      },
+      "fullAnswer": {
+        "2": "17",
+        "6": "16"
+      }
+    },
+    "types": {
+      "detailed": "relVerify",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the flag is behind the van.",
+    "question_id": "201951711",
+    "predicted": "# Is the green flag behind the vehicle made of metal?var1=image_patch.find('green flag')\nvar2=image_patch.find('vehicle')\nvar3=verify_relationship(var1[0], var2[0], 'behind') if var1 and var2 else False\nvar4=var1[0].verify_property('metal') if var3 else False\nanswer='yes' if var4 else 'no'\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "man (5)"
+      },
+      {
+        "operation": "choose vposition",
+        "dependencies": [
+          0
+        ],
+        "argument": "top|bottom"
+      }
+    ],
+    "entailed": [
+      "20644753",
+      "20644754"
+    ],
+    "equivalent": [
+      "20644755"
+    ],
+    "question": "Is the man in the bottom or in the top of the picture?",
+    "imageId": "n250821",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "10c-man_vposition"
+    },
+    "answer": "top",
+    "semanticStr": "select: man (5)->choose vposition: top|bottom [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "5"
+      },
+      "fullAnswer": {
+        "1": "5"
+      }
+    },
+    "types": {
+      "detailed": "positionChoose",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The man is in the top of the image.",
+    "question_id": "20644755",
+    "predicted": "# Is the man in the bottom or in the top of the picture?var1=image_patch.find('man')\nvar2=verify_relationship(var1[0], image_patch, 'bottom') if var1 else False\nvar3=verify_relationship(var1[0], image_patch, 'top') if var1 else False\nanswer='bottom' if var2 else 'top' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cone (0)"
+      },
+      {
+        "operation": "filter size",
+        "dependencies": [
+          0
+        ],
+        "argument": "small"
+      },
+      {
+        "operation": "verify rel",
+        "dependencies": [
+          1
+        ],
+        "argument": "machine,in front of,o (6)"
+      }
+    ],
+    "entailed": [
+      "20786308"
+    ],
+    "equivalent": [
+      "20785984"
+    ],
+    "question": "Is the small cone in front of the machine?",
+    "imageId": "n12404",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-cone_machine"
+    },
+    "answer": "yes",
+    "semanticStr": "select: cone (0)->filter size: small [0]->verify rel: machine,in front of,o (6) [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "8": "6",
+        "2:4": "0"
+      },
+      "fullAnswer": {
+        "8": "6",
+        "2": "0"
+      }
+    },
+    "types": {
+      "detailed": "relVerify",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the cone is in front of the machine.",
+    "question_id": "20785984",
+    "predicted": "# Is the small cone in front of the machine?var1=image_patch.find('small cone')\nvar2=image_patch.find('machine')\nvar3=verify_relationship(var1[0], var2[0], 'in front') if var1 and var2 else False\nanswer='yes' if var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "bed (5)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "furniture,in front of,o (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202023459"
+    ],
+    "equivalent": [
+      "202023458"
+    ],
+    "question": "What is the item of furniture that the bed is in front of?",
+    "imageId": "n95313",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "15-bed_in front of,o"
+    },
+    "answer": "closet",
+    "semanticStr": "select: bed (5)->relate: furniture,in front of,o (1) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "8": "5",
+        "3:6": "1"
+      },
+      "fullAnswer": {
+        "1:4": "1",
+        "6": "1"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The piece of furniture is a closet.",
+    "question_id": "202023458",
+    "predicted": "# What is the item of furniture that the bed is in front of?var1=image_patch.find('bed')\nvar2=var1[0].crop_position('in front', image_patch) if var1 else None\nvar3=var2.simple_query('What is the item of furniture?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Contradicts the question",
+    "explanation": "Should look behind the bed, since the bed is in front of the object"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "phone (6)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "device,to the left of,s (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201498371",
+      "201498372",
+      "201498368",
+      "201498369",
+      "201498266"
+    ],
+    "equivalent": [
+      "201498370"
+    ],
+    "question": "What kind of device is to the left of the phone?",
+    "imageId": "n315887",
+    "isBalanced": true,
+    "groups": {
+      "global": "device",
+      "local": "15-phone_to the left of,s"
+    },
+    "answer": "computer mouse",
+    "semanticStr": "select: phone (6)->relate: device,to the left of,s (0) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0:2": "0"
+      },
+      "question": {
+        "3": "0"
+      },
+      "fullAnswer": {
+        "1": "0",
+        "4:6": "0"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The device is a computer mouse.",
+    "question_id": "201498370",
+    "predicted": "# What kind of device is to the left of the phone?var1=image_patch.find('phone')\nvar2=image_patch.find('device')\nvar3=verify_relationship(var2[0], var1[0], 'left') if var2 and var1 else False\nvar4=var2[0].simple_query('What kind of device is this?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "man (5)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "animal,watching,o (2)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20644699",
+      "20644782",
+      "20644780",
+      "20644779"
+    ],
+    "equivalent": [
+      "20644781"
+    ],
+    "question": "What animal is the man watching?",
+    "imageId": "n250821",
+    "isBalanced": true,
+    "groups": {
+      "global": "animal",
+      "local": "14-man_watching,o"
+    },
+    "answer": "cat",
+    "semanticStr": "select: man (5)->relate: animal,watching,o (2) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "2"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "5",
+        "5": "2"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The man is watching the cat.",
+    "question_id": "20644781",
+    "predicted": "# What animal is the man watching?var1=image_patch.find('man')\nvar2=image_patch.find('animal')\nvar3=verify_relationship(var1[0], var2[0], 'watching') if var1 and var2 else False\nvar4=var2[0].simple_query('What animal is this?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "ground (9)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "animal,standing on,s (11)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202286533",
+      "202286459"
+    ],
+    "equivalent": [
+      "202286532"
+    ],
+    "question": "What is the animal that is standing on the ground?",
+    "imageId": "n413002",
+    "isBalanced": true,
+    "groups": {
+      "global": "animal",
+      "local": "15-ground_standing on,s"
+    },
+    "answer": "elephant",
+    "semanticStr": "select: ground (9)->relate: animal,standing on,s (11) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "11"
+      },
+      "question": {
+        "9": "9",
+        "3": "11"
+      },
+      "fullAnswer": {
+        "1": "11",
+        "4": "11"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The animal is an elephant.",
+    "question_id": "202286532",
+    "predicted": "# What is the animal that is standing on the ground?var1=image_patch.find('standing')\nvar2=var1[0].simple_query('What animal is this?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cabinet (9)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "modern"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          1
+        ],
+        "argument": "?"
+      },
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "faucet (-) "
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          3
+        ],
+        "argument": "modern"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          4
+        ],
+        "argument": "?"
+      },
+      {
+        "operation": "or",
+        "dependencies": [
+          2,
+          5
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "20149818",
+      "20149817",
+      "20149816"
+    ],
+    "equivalent": [
+      "20149819"
+    ],
+    "question": "Do you see either faucets or cabinets that are modern?",
+    "imageId": "n65866",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "04-cabinet_modern"
+    },
+    "answer": "yes",
+    "semanticStr": "select: cabinet (9)->filter: modern [0]->exist: ? [1]->select: faucet (-) ->filter: modern [3]->exist: ? [4]->or:  [2, 5]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "6": "9"
+      },
+      "fullAnswer": {
+        "2": "9"
+      }
+    },
+    "types": {
+      "detailed": "existThatOr",
+      "semantic": "obj",
+      "structural": "logical"
+    },
+    "fullAnswer": "Yes, the cabinet is modern.",
+    "question_id": "20149819",
+    "predicted": "# Do you see either faucets or cabinets that are modern?var1=image_patch.find('faucets')\nvar2=image_patch.find('cabinet')\nvar3=var1[0].verify_property('modern') if var1 else False\nvar4=var2[0].verify_property('modern') if var2 else False\nanswer='yes' if var3 or var4 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "plate (2)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "porcelain"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "meat,on,s (4)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20794226",
+      "20794227"
+    ],
+    "equivalent": [
+      "20794226",
+      "20794225"
+    ],
+    "question": "What is the name of the meat on the porcelain plate?",
+    "imageId": "n278453",
+    "isBalanced": true,
+    "groups": {
+      "global": "meat",
+      "local": "15-plate_on,s"
+    },
+    "answer": "ham",
+    "semanticStr": "select: plate (2)->filter material: porcelain [0]->relate: meat,on,s (4) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "4"
+      },
+      "question": {
+        "9:11": "2",
+        "6": "4"
+      },
+      "fullAnswer": {
+        "1": "4",
+        "3": "4"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The meat is ham.",
+    "question_id": "20794225",
+    "predicted": "# What is the name of the meat on the porcelain plate?var1=image_patch.find('meat')\nvar2=image_patch.find('porcelain plate')\nvar3=verify_relationship(var1[0], var2[0], 'on') if var1 and var2 else False\nvar4=var1[0].simple_query('What is the name of the meat?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "athlete (9)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,playing with,s (6)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202147838"
+    ],
+    "equivalent": [
+      "202147854"
+    ],
+    "question": "What plays with the athlete?",
+    "imageId": "n194179",
+    "isBalanced": true,
+    "groups": {
+      "global": "object",
+      "local": "14-athlete_playing with,s"
+    },
+    "answer": "racket",
+    "semanticStr": "select: athlete (9)->relate: _,playing with,s (6) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "6",
+        "5": "9"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The racket plays with the athlete.",
+    "question_id": "202147854",
+    "predicted": "# What plays with the athlete?var1=image_patch.find('athlete')\nvar2=var1[0].simple_query('What plays with the athlete?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shuttle (14)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,surrounded by,o (15)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201030388",
+      "201030389"
+    ],
+    "equivalent": [
+      "201030390"
+    ],
+    "question": "What's the shuttle surrounded by?",
+    "imageId": "n54424",
+    "isBalanced": true,
+    "groups": {
+      "global": "thing",
+      "local": "14-shuttle_surrounded by,o"
+    },
+    "answer": "stars",
+    "semanticStr": "select: shuttle (14)->relate: _,surrounded by,o (15) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "15"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "14",
+        "6": "15"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The shuttle is surrounded by the stars.",
+    "question_id": "201030390",
+    "predicted": "# What's the shuttle surrounded by?var1=image_patch.find('shuttle')\nvar2=var1[0].classify('state') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "countertop (4)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "appliance,above,s (7)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20896522",
+      "20896579",
+      "20896578",
+      "20896575",
+      "20896574",
+      "20896576"
+    ],
+    "equivalent": [
+      "20896577"
+    ],
+    "question": "What appliance is above the countertop?",
+    "imageId": "n548534",
+    "isBalanced": true,
+    "groups": {
+      "global": "appliance",
+      "local": "15-countertop_above,s"
+    },
+    "answer": "microwave",
+    "semanticStr": "select: countertop (4)->relate: appliance,above,s (7) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "7"
+      },
+      "question": {
+        "1": "7"
+      },
+      "fullAnswer": {
+        "1": "7",
+        "4": "7"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The appliance is a microwave.",
+    "question_id": "20896577",
+    "predicted": "# What appliance is above the countertop?var1=image_patch.find('countertop')\nvar2=var1[0].crop_position('above', image_patch) if var1 else None\nvar3=var2.simple_query('What appliance is this?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "chair (7)"
+      },
+      {
+        "operation": "verify hposition",
+        "dependencies": [
+          0
+        ],
+        "argument": "left"
+      }
+    ],
+    "entailed": [
+      "201067858",
+      "201067856",
+      "201067857",
+      "201067855"
+    ],
+    "equivalent": [
+      "201067854"
+    ],
+    "question": "Is the chair on the left side?",
+    "imageId": "n367944",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-chair_left"
+    },
+    "answer": "yes",
+    "semanticStr": "select: chair (7)->verify hposition: left [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "7"
+      },
+      "fullAnswer": {
+        "2": "7"
+      }
+    },
+    "types": {
+      "detailed": "positionVerify",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the chair is on the left of the image.",
+    "question_id": "201067854",
+    "predicted": "# Is the chair on the left side?var1=image_patch.find('chair')\nvar2=verify_relationship(var1[0], image_patch, 'left') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "wall (10)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "appliance,beside,s (8)"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          1
+        ],
+        "argument": "black"
+      },
+      {
+        "operation": "verify material",
+        "dependencies": [
+          1
+        ],
+        "argument": "metal "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          2,
+          3
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "20637344"
+    ],
+    "equivalent": [
+      "20637345"
+    ],
+    "question": "Is the appliance beside the wall metallic and black?",
+    "imageId": "n184385",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-black_metal"
+    },
+    "answer": "no",
+    "semanticStr": "select: wall (10)->relate: appliance,beside,s (8) [0]->verify color: black [1]->verify material: metal  [1]->and:  [2, 3]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "8",
+        "5": "10"
+      },
+      "fullAnswer": {
+        "2": "8"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrsC",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "No, the stove is metallic but white.",
+    "question_id": "20637345",
+    "predicted": "# Is the appliance beside the wall metallic and black?var1=image_patch.find('appliance')\nvar2=image_patch.find('wall')\nvar3=verify_relationship(var1[0], var2[0], 'beside') if var1 and var2 else False\nvar4=var1[0].verify_property('metallic') if var3 else False\nvar5=var1[0].verify_property('black') if var3 else False\nanswer='yes' if var3 and var4 and var5 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "appliance (5)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "powerful"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201637226",
+      "201637225"
+    ],
+    "equivalent": [
+      "201637227"
+    ],
+    "question": "What kind of appliance is powerful?",
+    "imageId": "n200692",
+    "isBalanced": true,
+    "groups": {
+      "global": "appliance",
+      "local": "12q-appliance_powerful"
+    },
+    "answer": "stove",
+    "semanticStr": "select: appliance (5)->filter: powerful [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "5"
+      },
+      "question": {
+        "3": "5"
+      },
+      "fullAnswer": {
+        "1": "5",
+        "4": "5"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The appliance is a stove.",
+    "question_id": "201637227",
+    "predicted": "# What kind of appliance is powerful?var1=image_patch.find('powerful appliance')\nvar2=var1[0].classify('appliance') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "hat (9)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,wearing,s (8)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "201739317"
+    ],
+    "question": "Who is wearing a hat?",
+    "imageId": "n485969",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-hat_wearing,s"
+    },
+    "answer": "player",
+    "semanticStr": "select: hat (9)->relate: person,wearing,s (8) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "8"
+      },
+      "question": {
+        "4": "9"
+      },
+      "fullAnswer": {
+        "1": "8",
+        "5": "9"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The player is wearing a hat.",
+    "question_id": "201739317",
+    "predicted": "# Who is wearing a hat?var1=image_patch.find('hat')\nvar2=var1[0].simple_query('Who is wearing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "person (0)"
+      },
+      {
+        "operation": "filter age",
+        "dependencies": [
+          0
+        ],
+        "argument": "young"
+      },
+      {
+        "operation": "choose color",
+        "dependencies": [
+          1
+        ],
+        "argument": "blond|brunette"
+      }
+    ],
+    "entailed": [
+      "20508634",
+      "20508635"
+    ],
+    "equivalent": [
+      "20508636",
+      "20508635"
+    ],
+    "question": "Do you think the person that looks young is blond or brunette?",
+    "imageId": "n511913",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "10c-woman_color"
+    },
+    "answer": "blond",
+    "semanticStr": "select: person (0)->filter age: young [0]->choose color: blond|brunette [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "0",
+        "7": "0"
+      },
+      "fullAnswer": {
+        "1": "0"
+      }
+    },
+    "types": {
+      "detailed": "chooseAttr",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The woman is blond.",
+    "question_id": "20508636",
+    "predicted": "# Do you think the person that looks young is blond or brunette?var1=image_patch.find('person looking young')\nvar2=image_patch.find('brunette hair')\nvar3=exists(var1)\nvar4=exists(var2)\nanswer='blond' if var3 else 'brunette hair' if var4 else 'unknown'\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "man (2)"
+      },
+      {
+        "operation": "filter face expression",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(sad)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "person,sitting beside,o (3)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "2046484"
+    ],
+    "equivalent": [
+      "2046485",
+      "2046484"
+    ],
+    "question": "The man that is not sad is sitting beside who?",
+    "imageId": "n71728",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-man_sitting beside,o"
+    },
+    "answer": "boy",
+    "semanticStr": "select: man (2)->filter face expression: not(sad) [0]->relate: person,sitting beside,o (3) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "3"
+      },
+      "question": {
+        "1": "2",
+        "5": "2"
+      },
+      "fullAnswer": {
+        "1": "2",
+        "6": "3"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The man is sitting beside the boy.",
+    "question_id": "2046485",
+    "predicted": "# The man that is not sad is sitting beside who?var1=image_patch.find('man')\nvar2=image_patch.find('sitting')\nvar3=verify_relationship(var1[0], var2[0], 'beside') if var1 and var2 else False\nvar4=var1[0].simple_query('Who is the man not sad?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "woman (7)"
+      },
+      {
+        "operation": "filter height",
+        "dependencies": [
+          0
+        ],
+        "argument": "tall"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          1
+        ],
+        "argument": "?"
+      },
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "man (-) "
+      },
+      {
+        "operation": "filter height",
+        "dependencies": [
+          3
+        ],
+        "argument": "tall"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          4
+        ],
+        "argument": "?"
+      },
+      {
+        "operation": "or",
+        "dependencies": [
+          2,
+          5
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "20151836",
+      "20151834",
+      "20151835",
+      "20151833"
+    ],
+    "equivalent": [
+      "20151832",
+      "20151833",
+      "20151834"
+    ],
+    "question": "Are there either any tall men or women?",
+    "imageId": "n313060",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "04-woman_tall"
+    },
+    "answer": "no",
+    "semanticStr": "select: woman (7)->filter height: tall [0]->exist: ? [1]->select: man (-) ->filter height: tall [3]->exist: ? [4]->or:  [2, 5]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "7": "7"
+      },
+      "fullAnswer": {
+        "4": "7"
+      }
+    },
+    "types": {
+      "detailed": "existAttrOrC",
+      "semantic": "obj",
+      "structural": "logical"
+    },
+    "fullAnswer": "No, there is a woman but she is short.",
+    "question_id": "20151832",
+    "predicted": "# Are there either any tall men or women?var1=image_patch.find('tall men')\nvar2=image_patch.find('woman')\nvar3=exists(var1)\nvar4=exists(var2)\nanswer='yes' if var3 or var4 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "floor (13)"
+      },
+      {
+        "operation": "verify cleanliness",
+        "dependencies": [
+          0
+        ],
+        "argument": "clean"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          0
+        ],
+        "argument": "white "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          1,
+          2
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "20691508"
+    ],
+    "question": "Does the floor look clean and white?",
+    "imageId": "n153293",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-clean_white"
+    },
+    "answer": "no",
+    "semanticStr": "select: floor (13)->verify cleanliness: clean [0]->verify color: white  [0]->and:  [1, 2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "13"
+      },
+      "fullAnswer": {
+        "2": "13"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrsC",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "No, the floor is clean but black.",
+    "question_id": "20691508",
+    "predicted": "# Does the floor look clean and white?var1=image_patch.find('floor')\nvar2=var1[0].verify_property('clean') if var1 else False\nvar3=var1[0].verify_property('white') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "toilet brush (9)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "material"
+      }
+    ],
+    "entailed": [
+      "201411239",
+      "201411241"
+    ],
+    "equivalent": [
+      "201411240"
+    ],
+    "question": "Of what material the toilet brush?",
+    "imageId": "n415215",
+    "isBalanced": true,
+    "groups": {
+      "global": "material",
+      "local": "10q-toilet brush_material"
+    },
+    "answer": "plastic",
+    "semanticStr": "select: toilet brush (9)->query: material [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4:6": "9"
+      },
+      "fullAnswer": {
+        "1:3": "9"
+      }
+    },
+    "types": {
+      "detailed": "material",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The toilet brush is made of plastic.",
+    "question_id": "201411240",
+    "predicted": "# Of what material the toilet brush?var1=image_patch.find('toilet brush')\nvar2=var1[0].classify('material') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "floor (6)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,falling off,s (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20644682"
+    ],
+    "equivalent": [
+      "20644681"
+    ],
+    "question": "What is falling off the floor?",
+    "imageId": "n250821",
+    "isBalanced": true,
+    "groups": {
+      "global": "footwear",
+      "local": "14-floor_falling off,s"
+    },
+    "answer": "sneakers",
+    "semanticStr": "select: floor (6)->relate: _,falling off,s (1) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "5": "6"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "6": "6"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The sneakers are falling off the floor.",
+    "question_id": "20644681",
+    "predicted": "# What is falling off the floor?var1=image_patch.find('floor')\nvar2=var1[0].simple_query('What is falling off the floor?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "belt (3)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "leather"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          1
+        ],
+        "argument": "black"
+      },
+      {
+        "operation": "verify thickness",
+        "dependencies": [
+          1
+        ],
+        "argument": "thick "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          2,
+          3
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "202053220"
+    ],
+    "question": "Is the leather belt both black and thick?",
+    "imageId": "n334278",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-black_thick"
+    },
+    "answer": "no",
+    "semanticStr": "select: belt (3)->filter material: leather [0]->verify color: black [1]->verify thickness: thick  [1]->and:  [2, 3]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2:4": "3"
+      },
+      "fullAnswer": {
+        "2": "3"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrsC",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "No, the belt is black but thin.",
+    "question_id": "202053220",
+    "predicted": "# Is the leather belt both black and thick?var1=image_patch.find('leather belt')\nvar2=var1[0].verify_property('black') if var1 else False\nvar3=var1[0].verify_property('thick') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "artwork (16)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "wall,leaning against,o (0)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "_,sitting in front of,s (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202100902",
+      "202100901",
+      "202100899"
+    ],
+    "equivalent": [
+      "202100898"
+    ],
+    "question": "What is sitting in front of the wall the artwork is leaning against?",
+    "imageId": "n280089",
+    "isBalanced": true,
+    "groups": {
+      "global": "appliance",
+      "local": "14-wall_sitting in front of,s"
+    },
+    "answer": "stove",
+    "semanticStr": "select: artwork (16)->relate: wall,leaning against,o (0) [0]->relate: _,sitting in front of,s (1) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "9": "16",
+        "7": "0"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "8": "0"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The stove is sitting in front of the wall.",
+    "question_id": "202100898",
+    "predicted": "# What is sitting in front of the wall the artwork is leaning against?var1=image_patch.find('artwork')\nvar2=image_patch.find('wall')\nvar3=verify_relationship(var1[0], var2[0], 'in front') if var1 and var2 else False\nvar4=var1[0].simple_query('What is sitting in front of the wall?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "Contradicts the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "vehicle (12)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "metal"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "2055629",
+      "2055628",
+      "2055652",
+      "2055653",
+      "2055650",
+      "2055651",
+      "2055692",
+      "2055693",
+      "2055691",
+      "2055649",
+      "2055648",
+      "2055689",
+      "2055688"
+    ],
+    "equivalent": [
+      "2055690"
+    ],
+    "question": "Which kind of vehicle is metallic?",
+    "imageId": "n263180",
+    "isBalanced": true,
+    "groups": {
+      "global": "vehicle",
+      "local": "12q-vehicle_metal"
+    },
+    "answer": "bus",
+    "semanticStr": "select: vehicle (12)->filter material: metal [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "12"
+      },
+      "question": {
+        "3": "12"
+      },
+      "fullAnswer": {
+        "1": "12",
+        "4": "12"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The vehicle is a bus.",
+    "question_id": "2055690",
+    "predicted": "# Which kind of vehicle is metallic?var1=image_patch.find('metallic vehicle')\nvar2=var1[0].classify('vehicle') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "furniture (17)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201030409",
+      "201030393",
+      "201030411"
+    ],
+    "equivalent": [
+      "201030410"
+    ],
+    "question": "Which kind of furniture is it?",
+    "imageId": "n54424",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "11q-furniture"
+    },
+    "answer": "couch",
+    "semanticStr": "select: furniture (17)->query: name [0]",
+    "annotations": {
+      "answer": {
+        "0": "17"
+      },
+      "question": {
+        "3": "17"
+      },
+      "fullAnswer": {
+        "1:4": "17",
+        "6": "17"
+      }
+    },
+    "types": {
+      "detailed": "category",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The piece of furniture is a couch.",
+    "question_id": "201030410",
+    "predicted": "# Which kind of furniture is it?var1=image_patch.find('furniture')\nvar2=var1[0].classify('furniture') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "vegetable (7)"
+      },
+      {
+        "operation": "filter shape",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(round)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201887252",
+      "201887165",
+      "201887171"
+    ],
+    "equivalent": [
+      "201887166"
+    ],
+    "question": "What kind of vegetable isn't round?",
+    "imageId": "n429961",
+    "isBalanced": true,
+    "groups": {
+      "global": "vegetable",
+      "local": "12q-vegetable_n#round"
+    },
+    "answer": "broccoli",
+    "semanticStr": "select: vegetable (7)->filter shape: not(round) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "7"
+      },
+      "question": {
+        "3": "18"
+      },
+      "fullAnswer": {
+        "1": "18",
+        "3": "7"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The vegetable is broccoli.",
+    "question_id": "201887166",
+    "predicted": "# What kind of vegetable isn't round?var1=image_patch.find('round vegetable')\nvar2=filter_img(image_patch.find('vegetable'), 'round')\nvar3=var2[0].classify('vegetable') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "fence (2)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(brown)"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          1
+        ],
+        "argument": "?"
+      }
+    ],
+    "entailed": [
+      "20978598",
+      "20978596",
+      "20978597"
+    ],
+    "equivalent": [
+      "20978599"
+    ],
+    "question": "Do you see fences in this photo that are not brown?",
+    "imageId": "n551964",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "04-fence_n#brown"
+    },
+    "answer": "no",
+    "semanticStr": "select: fence (2)->filter color: not(brown) [0]->exist: ? [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "3": "2"
+      },
+      "fullAnswer": {
+        "4": "2"
+      }
+    },
+    "types": {
+      "detailed": "existAttrNotC",
+      "semantic": "obj",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, there is a fence but it is brown.",
+    "question_id": "20978599",
+    "predicted": "# Do you see fences in this photo that are not brown?var1=image_patch.find('fence')\nvar2=[temp_var_1 for temp_var_1 in var1 if not temp_var_1.verify_property('brown')]\nvar3=exists(var2)\nanswer='yes' if var3 else 'no'\n return answer \n\n",
+    "error": "API Violation",
+    "explanation": "Should ask len(fences)"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shirt (1)"
+      },
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "hat (0) "
+      },
+      {
+        "operation": "different color",
+        "dependencies": [
+          0,
+          1
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "202223030",
+      "202223027",
+      "202223029"
+    ],
+    "equivalent": [
+      "202223030",
+      "202223028",
+      "202223029"
+    ],
+    "question": "Does the shirt have a different color than the hat?",
+    "imageId": "n257997",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "09diff-hat_shirt"
+    },
+    "answer": "no",
+    "semanticStr": "select: shirt (1)->select: hat (0) ->different color:  [0, 1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "9": "0",
+        "2": "1"
+      },
+      "fullAnswer": {
+        "3": "1",
+        "6": "0"
+      }
+    },
+    "types": {
+      "detailed": "twoDifferentC",
+      "semantic": "attr",
+      "structural": "compare"
+    },
+    "fullAnswer": "No, both the shirt and the hat are white.",
+    "question_id": "202223028",
+    "predicted": "# Does the shirt have a different color than the hat?var1=image_patch.find('shirt')\nvar2=image_patch.find('hat')\nvar3=var1[0].classify('color') if var1 else None\nvar4=var2[0].classify('color') if var2 else None\nanswer='yes' if var3 and var4 and (var3 != var4) else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "bottles (11)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "counter,on,o (7)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "shape"
+      }
+    ],
+    "entailed": [
+      "20752457",
+      "20752454",
+      "20752460",
+      "20752458"
+    ],
+    "equivalent": [
+      "20752459",
+      "20752460"
+    ],
+    "question": "What is the shape of the counter the bottles are on?",
+    "imageId": "n209843",
+    "isBalanced": true,
+    "groups": {
+      "global": "shape",
+      "local": "10q-counter_shape"
+    },
+    "answer": "rectangular",
+    "semanticStr": "select: bottles (11)->relate: counter,on,o (7) [0]->query: shape [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "8": "11",
+        "6": "7"
+      },
+      "fullAnswer": {
+        "1": "7"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The counter is rectangular.",
+    "question_id": "20752459",
+    "predicted": "# What is the shape of the counter the bottles are on?var1=image_patch.find('counter')\nvar2=image_patch.find('bottles')\nvar3=verify_relationship(var2[0], var1[0], 'on') if var2 and var1 else False\nvar4=var1[0].classify('shape') if var3 else None\nanswer=var4 if var4 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "wine bottle (18)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "books,to the right of,s (19)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "size"
+      }
+    ],
+    "entailed": [
+      "20508340",
+      "20508341",
+      "20508337",
+      "20508336",
+      "20508335",
+      "20508339"
+    ],
+    "equivalent": [
+      "20508338"
+    ],
+    "question": "How large are the books to the right of the wine bottle?",
+    "imageId": "n511913",
+    "isBalanced": true,
+    "groups": {
+      "global": "size",
+      "local": "10q-books_size"
+    },
+    "answer": "small",
+    "semanticStr": "select: wine bottle (18)->relate: books,to the right of,s (19) [0]->query: size [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "19",
+        "10:12": "18"
+      },
+      "fullAnswer": {
+        "1": "19"
+      }
+    },
+    "types": {
+      "detailed": "how",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The books are small.",
+    "question_id": "20508338",
+    "predicted": "# How large are the books to the right of the wine bottle?var1=image_patch.find('books')\nvar2=image_patch.find('wine bottle')\nvar3=verify_relationship(var1[0], var2[0], 'right') if var1 and var2 else False\nvar4=var1[0].classify('size') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "paintings (16)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "bed,below,s (14)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "shape"
+      }
+    ],
+    "entailed": [
+      "201882584",
+      "201882594",
+      "201882592",
+      "201882591"
+    ],
+    "equivalent": [
+      "201882593"
+    ],
+    "question": "What shape is the bed below the paintings?",
+    "imageId": "n125122",
+    "isBalanced": true,
+    "groups": {
+      "global": "shape",
+      "local": "10q-bed_shape"
+    },
+    "answer": "rectangular",
+    "semanticStr": "select: paintings (16)->relate: bed,below,s (14) [0]->query: shape [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "14",
+        "7": "16"
+      },
+      "fullAnswer": {
+        "1": "14"
+      }
+    },
+    "types": {
+      "detailed": "directWhich",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The bed is rectangular.",
+    "question_id": "201882593",
+    "predicted": "# What shape is the bed below the paintings?var1=image_patch.find('bed')\nvar2=image_patch.find('paintings')\nvar3=verify_relationship(var1[0], var2[0], 'below') if var1 and var2 else False\nvar4=var1[0].classify('shape') if var3 else None\nanswer=var4 if var4 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "clothing (6)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "tight"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201739172",
+      "201739171"
+    ],
+    "equivalent": [
+      "201739173"
+    ],
+    "question": "Which kind of clothing is tight?",
+    "imageId": "n485969",
+    "isBalanced": true,
+    "groups": {
+      "global": "clothing",
+      "local": "12q-clothing_tight"
+    },
+    "answer": "pants",
+    "semanticStr": "select: clothing (6)->filter: tight [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {
+        "3": "6"
+      },
+      "fullAnswer": {
+        "1": "6",
+        "3": "6"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The clothing is pants.",
+    "question_id": "201739173",
+    "predicted": "# Which kind of clothing is tight?var1=image_patch.find('tight clothing')\nvar2=var1[0].classify('clothing') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shirt (7)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "beige"
+      },
+      {
+        "operation": "choose",
+        "dependencies": [
+          1
+        ],
+        "argument": "long sleeved|short sleeved"
+      }
+    ],
+    "entailed": [
+      "201760647",
+      "201760654",
+      "201760650",
+      "201760651",
+      "201760655",
+      "201760649",
+      "201760648",
+      "201760646"
+    ],
+    "equivalent": [
+      "201760652"
+    ],
+    "question": "Is the beige shirt short sleeved or maybe long sleeved?",
+    "imageId": "n350732",
+    "isBalanced": true,
+    "groups": {
+      "global": "32",
+      "local": "10c-shirt_32"
+    },
+    "answer": "long sleeved",
+    "semanticStr": "select: shirt (7)->filter color: beige [0]->choose: long sleeved|short sleeved [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2:4": "7"
+      },
+      "fullAnswer": {
+        "1": "7"
+      }
+    },
+    "types": {
+      "detailed": "chooseAttr",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The shirt is long sleeved.",
+    "question_id": "201760652",
+    "predicted": "# Is the beige shirt short sleeved or maybe long sleeved?var1=image_patch.find('beige shirt')\nvar2=var1[0].verify_property('short sleeved') if var1 else False\nvar3=var1[0].verify_property('long sleeved') if var1 else False\nanswer='short sleeved' if var2 else 'long sleeved' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "scene"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "place"
+      }
+    ],
+    "entailed": [
+      "20865358"
+    ],
+    "equivalent": [
+      "20865357"
+    ],
+    "question": "What place is it?",
+    "imageId": "n143935",
+    "isBalanced": true,
+    "groups": {
+      "global": "place",
+      "local": "02q-place"
+    },
+    "answer": "pasture",
+    "semanticStr": "select: scene->query: place [0]",
+    "annotations": {
+      "answer": {},
+      "question": {},
+      "fullAnswer": {}
+    },
+    "types": {
+      "detailed": "place",
+      "semantic": "global",
+      "structural": "query"
+    },
+    "fullAnswer": "It is a pasture.",
+    "question_id": "20865357",
+    "predicted": "# What place is it?var1=image_patch.find('place')\nvar2=var1[0].simple_query('What place is this?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "skateboard (7)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,on,s (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20894193",
+      "20894196"
+    ],
+    "equivalent": [
+      "20894192"
+    ],
+    "question": "Who do you think is on the skateboard?",
+    "imageId": "n272313",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-skateboard_on,s"
+    },
+    "answer": "boy",
+    "semanticStr": "select: skateboard (7)->relate: person,on,s (0) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "0"
+      },
+      "question": {
+        "7": "7"
+      },
+      "fullAnswer": {
+        "1": "0",
+        "5": "7"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The boy is on the skateboard.",
+    "question_id": "20894192",
+    "predicted": "# Who do you think is on the skateboard?var1=image_patch.find('skateboard')\nvar2=var1[0].simple_query('Who is on the skateboard?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "toothbrush (1)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "blue"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "hposition"
+      }
+    ],
+    "entailed": [
+      "201770680",
+      "201770681",
+      "201770679",
+      "201770678"
+    ],
+    "equivalent": [
+      "201770682"
+    ],
+    "question": "On which side is the blue toothbrush?",
+    "imageId": "n310625",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "10q-toothbrush_hposition"
+    },
+    "answer": "right",
+    "semanticStr": "select: toothbrush (1)->filter color: blue [0]->query: hposition [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "5:7": "1"
+      },
+      "fullAnswer": {
+        "1": "1"
+      }
+    },
+    "types": {
+      "detailed": "positionQuery",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The toothbrush is on the right of the image.",
+    "question_id": "201770682",
+    "predicted": "# On which side is the blue toothbrush?var1=image_patch.find('blue toothbrush')\nvar2=verify_relationship(var1[0], image_patch, 'left') if var1 else False\nvar3=verify_relationship(var1[0], image_patch, 'right') if var1 else False\nanswer='left' if var2 else 'right' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "drawer (24)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "toaster,above,s (4)"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          1
+        ],
+        "argument": "?"
+      }
+    ],
+    "entailed": [
+      "20317288",
+      "20317290",
+      "20317208"
+    ],
+    "equivalent": [
+      "20317290",
+      "20317289",
+      "20317288"
+    ],
+    "question": "Is there a toaster above the drawer?",
+    "imageId": "n350766",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-drawer_toaster"
+    },
+    "answer": "yes",
+    "semanticStr": "select: drawer (24)->relate: toaster,above,s (4) [0]->exist: ? [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "3": "4",
+        "6": "24"
+      },
+      "fullAnswer": {
+        "4": "4",
+        "7": "24"
+      }
+    },
+    "types": {
+      "detailed": "existRelS",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, there is a toaster above the drawer.",
+    "question_id": "20317289",
+    "predicted": "# Is there a toaster above the drawer?var1=image_patch.find('toaster')\nvar2=image_patch.find('drawer')\nvar3=verify_relationship(var1[0], var2[0], 'above') if var1 and var2 else False\nanswer='yes' if var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "wallet (14)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "furniture,lying on top of,o (17)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20856725",
+      "20856726",
+      "20856727",
+      "20856736"
+    ],
+    "equivalent": [
+      "20856728"
+    ],
+    "question": "Which kind of furniture is the wallet lying on top of?",
+    "imageId": "n293477",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "15-wallet_lying on top of,o"
+    },
+    "answer": "bed",
+    "semanticStr": "select: wallet (14)->relate: furniture,lying on top of,o (17) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "17"
+      },
+      "question": {
+        "3": "17"
+      },
+      "fullAnswer": {
+        "1": "14",
+        "8": "17"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The wallet is lying on top of the bed.",
+    "question_id": "20856728",
+    "predicted": "# Which kind of furniture is the wallet lying on top of?var1=image_patch.find('wallet')\nvar2=image_patch.find('lying on top of')\nvar3=verify_relationship(var1[0], var2[0], 'lying') if var1 and var2 else False\nvar4=var1[0].classify('furniture') if var3 else None\nanswer=var4 if var4 else 'unknown'\n return answer \n\n",
+    "error":"API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "woman (0)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "furniture,in front of,o (13)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20508742",
+      "20508741",
+      "20508746",
+      "20508744",
+      "20508745",
+      "20508070",
+      "20508071"
+    ],
+    "equivalent": [
+      "20508743",
+      "20508744",
+      "20508745"
+    ],
+    "question": "What type of furniture is the woman in front of?",
+    "imageId": "n511913",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "15-woman_in front of,o"
+    },
+    "answer": "table",
+    "semanticStr": "select: woman (0)->relate: furniture,in front of,o (13) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "13"
+      },
+      "question": {
+        "3": "13",
+        "6": "0"
+      },
+      "fullAnswer": {
+        "1": "0",
+        "7": "13"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelO",
+       "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The woman is in front of the table.",
+    "question_id": "20508743",
+    "predicted": "# What type of furniture is the woman in front of?var1=image_patch.find('woman')\nvar2=image_patch.find('woman')\nvar3=verify_relationship(var2[0], var1[0], 'in front') if var2 and var1 else False\nvar4=var2[0].classify('furniture') if var3 else None\nanswer=var4 if var4 else 'unknown'\n return answer \n\n",
+    "error":"API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "dishwasher (2)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "electric"
+      },
+      {
+        "operation": "verify rel",
+        "dependencies": [
+          1
+        ],
+        "argument": "floor,behind,o (11)"
+      }
+    ],
+    "entailed": [
+      "201663022"
+    ],
+    "equivalent": [
+      "201663602"
+    ],
+    "question": "Is the electric dishwasher behind the floor?",
+    "imageId": "n35676",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-dishwasher_floor"
+    },
+    "answer": "yes",
+    "semanticStr": "select: dishwasher (2)->filter: electric [0]->verify rel: floor,behind,o (11) [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2:4": "2",
+        "6": "11"
+      },
+      "fullAnswer": {
+        "2": "2",
+        "6": "11"
+      }
+    },
+    "types": {
+      "detailed": "relVerify",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the dishwasher is behind the floor.",
+    "question_id": "201663602",
+    "predicted": "# Is the electric dishwasher behind the floor?var1=image_patch.find('electric dishwasher')\nvar2=image_patch.find('floor')\nvar3=verify_relationship(var1[0], var2[0], 'behind') if var1 and var2 else False\nanswer='yes' if var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "purse (2)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "open"
+      },
+      {
+        "operation": "choose vposition",
+        "dependencies": [
+          1
+        ],
+        "argument": "bottom|top"
+      }
+    ],
+    "entailed": [
+      "20349831",
+      "20349833",
+      "20349832",
+      "20349835",
+      "20349834",
+      "20349837"
+    ],
+    "equivalent": [
+      "20349835",
+      "20349836"
+    ],
+    "question": "Is the open purse in the bottom part or in the top of the photo?",
+    "imageId": "n468864",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "10c-purse_vposition"
+    },
+    "answer": "bottom",
+    "semanticStr": "select: purse (2)->filter: open [0]->choose vposition: bottom|top [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2:4": "2"
+      },
+      "fullAnswer": {
+        "1": "2"
+      }
+    },
+    "types": {
+      "detailed": "positionChoose",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The purse is in the bottom of the image.",
+    "question_id": "20349836",
+    "predicted": "# Is the open purse in the bottom part or in the top of the photo?var1=image_patch.find('open purse')\nvar2=verify_relationship(var1[0], image_patch, 'bottom') if var1 else False\nvar3=verify_relationship(var1[0], image_patch, 'top') if var1 else False\nanswer='bottom' if var2 else 'top' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "drink (6)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "furniture,to the left of,s (9)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20783549",
+      "20783548",
+      "20783459",
+      "20783458",
+      "20783448",
+      "20783547",
+      "20783545",
+      "20783544",
+      "20783551",
+      "20783552",
+      "20783550"
+    ],
+    "equivalent": [
+      "20783546"
+    ],
+    "question": "What kind of furniture is to the left of the drink?",
+    "imageId": "n355339",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "15-drink_to the left of,s"
+    },
+    "answer": "chair",
+    "semanticStr": "select: drink (6)->relate: furniture,to the left of,s (9) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "9"
+      },
+      "question": {
+        "3": "9"
+      },
+      "fullAnswer": {
+        "1:4": "9",
+        "6": "9"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The piece of furniture is a chair.",
+    "question_id": "20783546",
+    "predicted": "# What kind of furniture is to the left of the drink?var1=image_patch.find('drink')\nvar2=image_patch.find('furniture')\nvar3=verify_relationship(var2[0], var1[0], 'left') if var2 and var1 else False\nvar4=var2[0].classify('furniture') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "man (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "pose"
+      }
+    ],
+    "entailed": [
+      "202012819",
+      "202012818",
+      "202012827",
+      "202012828",
+      "202012829",
+      "202012811",
+      "202012820",
+      "202012813",
+      "202012812",
+      "202012815",
+      "202012814",
+      "202012821",
+      "202012824",
+      "202012822",
+      "202012825",
+      "202012823",
+      "202012826"
+    ],
+    "equivalent": [
+      "202012816"
+    ],
+    "question": "What is the man doing?",
+    "imageId": "n326988",
+    "isBalanced": true,
+    "groups": {
+      "global": "pose",
+      "local": "10q-man_pose"
+    },
+    "answer": "standing",
+    "semanticStr": "select: man (0)->query: pose [0]",
+    "annotations": {
+      "answer": {},
+      "question": {},
+      "fullAnswer": {
+        "1": "0"
+      }
+    },
+    "types": {
+      "detailed": "activity",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The man is standing.",
+    "question_id": "202012816",
+    "predicted": "# What is the man doing?var1=image_patch.find('man')\nvar2=var1[0].simple_query('What is the man doing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "animal (14)"
+      },
+      {
+        "operation": "filter size",
+        "dependencies": [
+          0
+        ],
+        "argument": "large"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "person,looking down at,o (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201795136",
+      "201795387"
+    ],
+    "equivalent": [
+      "201795135"
+    ],
+    "question": "Who is the large animal looking down at?",
+    "imageId": "n119944",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-elephant_looking down at,o"
+    },
+    "answer": "child",
+    "semanticStr": "select: animal (14)->filter size: large [0]->relate: person,looking down at,o (0) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "0"
+      },
+      "question": {
+        "3:5": "14"
+      },
+      "fullAnswer": {
+        "1": "14",
+        "7": "0"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The elephant is looking down at the kid.",
+    "question_id": "201795135",
+    "predicted": "# Who is the large animal looking down at?var1=image_patch.find('large animal')\nvar2=var1[0].simple_query('Who is looking down at?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "animal (4)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "brown"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "place,standing on,o (19)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201639563",
+      "201639561",
+      "201639560"
+    ],
+    "equivalent": [
+      "201639562"
+    ],
+    "question": "Where do the brown animals stand on?",
+    "imageId": "n497789",
+    "isBalanced": true,
+    "groups": {
+      "global": "place",
+      "local": "14-giraffes_standing on,o"
+    },
+    "answer": "field",
+    "semanticStr": "select: animal (4)->filter color: brown [0]->relate: place,standing on,o (19) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "19"
+      },
+      "question": {
+        "3:5": "4"
+      },
+      "fullAnswer": {
+        "1": "4",
+        "5": "19"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The giraffes stand on the field.",
+    "question_id": "201639562",
+    "predicted": "# Where do the brown animals stand on?var1=image_patch.find('brown animals')\nvar2=var1[0].crop_position('on', image_patch) if var1 else None\nvar3=var2.simple_query('What is the brown animals standing on?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "sidewalk (4)"
+      },
+      {
+        "operation": "choose material",
+        "dependencies": [
+          0
+        ],
+        "argument": "stone|cobblestone"
+      }
+    ],
+    "entailed": [
+      "20244726"
+    ],
+    "equivalent": [
+      "20244726",
+      "20244725"
+    ],
+    "question": "Is the sidewalk made of cobblestone or stone?",
+    "imageId": "n19152",
+    "isBalanced": true,
+    "groups": {
+      "global": "material",
+      "local": "10c-sidewalk_material"
+    },
+    "answer": "stone",
+    "semanticStr": "select: sidewalk (4)->choose material: stone|cobblestone [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "4"
+      },
+      "fullAnswer": {
+        "1": "4"
+      }
+    },
+    "types": {
+      "detailed": "materialChoose",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The sidewalk is made of stone.",
+    "question_id": "20244725",
+    "predicted": "# Is the sidewalk made of cobblestone or stone?var1=image_patch.find('sidewalk')\nvar2=var1[0].verify_property('cobblestone') if var1 else False\nvar3=var1[0].verify_property('stone') if var1 else False\nanswer='cobblestone' if var2 else 'stone' if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "street (9)"
+      },
+      {
+        "operation": "verify width",
+        "dependencies": [
+          0
+        ],
+        "argument": "wide"
+      }
+    ],
+    "entailed": [
+      "201346751",
+      "201346750",
+      "201346760",
+      "201346748",
+      "201346749",
+      "201346753",
+      "201346743",
+      "201346746",
+      "201346747",
+      "201346745"
+    ],
+    "equivalent": [
+      "201346744"
+    ],
+    "question": "Is the street wide?",
+    "imageId": "n131634",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-street_wide"
+    },
+    "answer": "yes",
+    "semanticStr": "select: street (9)->verify width: wide [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "9"
+      },
+      "fullAnswer": {
+        "2": "9"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttr",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the street is wide.",
+    "question_id": "201346744",
+    "predicted": "# Is the street wide?var1=image_patch.find('street')\nvar2=var1[0].verify_property('wide') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "router (12)"
+      },
+      {
+        "operation": "filter shape",
+        "dependencies": [
+          0
+        ],
+        "argument": "rectangular"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "color"
+      }
+    ],
+    "entailed": [
+      "201902529",
+      "201902538",
+      "201902534",
+      "201902533",
+      "201902532",
+      "201902531",
+      "201902530",
+      "201902537",
+      "201902525",
+      "201902526",
+      "201902527"
+    ],
+    "equivalent": [
+      "201902528"
+    ],
+    "question": "What is the color of the router that looks rectangular?",
+    "imageId": "n435808",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "10q-router_color"
+    },
+    "answer": "white",
+    "semanticStr": "select: router (12)->filter shape: rectangular [0]->query: color [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "9": "12",
+        "6": "12"
+      },
+      "fullAnswer": {
+        "1": "12"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The router is white.",
+    "question_id": "201902528",
+    "predicted": "# What is the color of the router that looks rectangular?var1=image_patch.find('router')\nvar2=var1[0].verify_property('rectangular') if var1 else False\nvar3=var1[0].classify('color') if var2 else None\nanswer=var3 if var3 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cheese (9)"
+      },
+      {
+        "operation": "verify rel",
+        "dependencies": [
+          0
+        ],
+        "argument": "bread,on,o (-)"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "202037119"
+    ],
+    "question": "Is the cheese on a bread?",
+    "imageId": "n200225",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-cheese_bread"
+    },
+    "answer": "no",
+    "semanticStr": "select: cheese (9)->verify rel: bread,on,o (-) [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "9"
+      },
+      "fullAnswer": {
+        "2": "9",
+        "6": "6"
+      }
+    },
+    "types": {
+      "detailed": "relVerifyCo",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, the cheese is on the pizza.",
+    "question_id": "202037119",
+    "predicted": "# Is the cheese on a bread?var1=image_patch.find('cheese')\nvar2=image_patch.find('bread')\nvar3=verify_relationship(var1[0], var2[0], 'on') if var1 and var2 else False\nanswer='yes' if var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "boat (8)"
+      },
+      {
+        "operation": "filter width",
+        "dependencies": [
+          0
+        ],
+        "argument": "wide"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          1
+        ],
+        "argument": "?"
+      }
+    ],
+    "entailed": [
+      "202117037",
+      "202117036",
+      "202117033",
+      "202117032",
+      "202117039",
+      "202117038",
+      "202117040",
+      "202117041"
+    ],
+    "equivalent": [
+      "202117037",
+      "202117035",
+      "202117038",
+      "202117036"
+    ],
+    "question": "Do you see any wide boat?",
+    "imageId": "n48494",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "04-boat_wide"
+    },
+    "answer": "yes",
+    "semanticStr": "select: boat (8)->filter width: wide [0]->exist: ? [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "5": "8"
+      },
+      "fullAnswer": {
+        "5": "8"
+      }
+    },
+    "types": {
+      "detailed": "existAttr",
+      "semantic": "obj",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, there is a wide boat.",
+    "question_id": "202117035",
+    "predicted": "# Do you see any wide boat?var1=image_patch.find('wide boat')\nvar2=exists(var1)\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "animal (1)"
+      },
+      {
+        "operation": "filter size",
+        "dependencies": [
+          0
+        ],
+        "argument": "huge"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "color"
+      }
+    ],
+    "entailed": [
+      "20542948",
+      "20542949",
+      "20542911",
+      "20542910",
+      "20542938",
+      "20542942",
+      "20542943",
+      "20542940",
+      "20542941",
+      "20542946",
+      "20542947",
+      "20542944",
+      "20542937",
+      "20542957",
+      "20542955",
+      "20542956"
+    ],
+    "equivalent": [
+      "20542945"
+    ],
+    "question": "What color is the huge animal?",
+    "imageId": "n100552",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "10q-elephant_color"
+    },
+    "answer": "brown",
+    "semanticStr": "select: animal (1)->filter size: huge [0]->query: color [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4:6": "1"
+      },
+      "fullAnswer": {
+        "1": "1"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The elephant is brown.",
+    "question_id": "20542945",
+    "predicted": "# What color is the huge animal?var1=image_patch.find('huge animal')\nvar2=var1[0].classify('color') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "manhole cover (25)"
+      },
+      {
+        "operation": "verify material",
+        "dependencies": [
+          0
+        ],
+        "argument": "metal"
+      },
+      {
+        "operation": "verify shape",
+        "dependencies": [
+          0
+        ],
+        "argument": "round "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          1,
+          2
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "20340862",
+      "20340865",
+      "20340864",
+      "20340866",
+      "20340860",
+      "20340863",
+      "20340857",
+      "20340858",
+      "20340859",
+      "20340868"
+    ],
+    "equivalent": [
+      "20340856"
+    ],
+    "question": "Is the manhole cover metallic and round?",
+    "imageId": "n346247",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-metal_round"
+    },
+    "answer": "yes",
+    "semanticStr": "select: manhole cover (25)->verify material: metal [0]->verify shape: round  [0]->and:  [1, 2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2:4": "25"
+      },
+      "fullAnswer": {
+        "2:4": "25"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrs",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "Yes, the manhole cover is metallic and round.",
+    "question_id": "20340856",
+    "predicted": "# Is the manhole cover metallic and round?var1=image_patch.find('manhole cover')\nvar2=var1[0].verify_property('metallic') if var1 else False\nvar3=var1[0].verify_property('round') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "furniture (8)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(closed)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202023563",
+      "202023279",
+      "202023564"
+    ],
+    "equivalent": [
+      "202023280"
+    ],
+    "question": "What kind of furniture is not closed?",
+    "imageId": "n95313",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "12q-furniture_n#closed"
+    },
+    "answer": "chair",
+    "semanticStr": "select: furniture (8)->filter: not(closed) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "8"
+      },
+      "question": {
+        "3": "1"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "4": "8"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The furniture is a chair.",
+    "question_id": "202023280",
+    "predicted": "# What kind of furniture is not closed?var1=image_patch.find('closed furniture')\nvar2=filter_img(image_patch.find('furniture'), 'closed')\nvar3=var2[0].classify('furniture') if var2 else None\nanswer=var3 if var3 else 'unknown'\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "table (2)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "wood"
+      },
+      {
+        "operation": "choose size",
+        "dependencies": [
+          1
+        ],
+        "argument": "large|small"
+      }
+    ],
+    "entailed": [
+      "202226048",
+      "202226050",
+      "202226051",
+      "202226041",
+      "202226040",
+      "202226038",
+      "202226039",
+      "202226053",
+      "202226036",
+      "202226037"
+    ],
+    "equivalent": [
+      "202226049",
+      "202226048"
+    ],
+    "question": "Is the table made of wood large or small?",
+    "imageId": "n336443",
+    "isBalanced": true,
+    "groups": {
+      "global": "size",
+      "local": "10c-table_size"
+    },
+    "answer": "large",
+    "semanticStr": "select: table (2)->filter material: wood [0]->choose size: large|small [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "2",
+        "5": "2"
+      },
+      "fullAnswer": {
+        "1": "2"
+      }
+    },
+    "types": {
+      "detailed": "chooseAttr",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The table is large.",
+    "question_id": "202226049",
+    "predicted": "# Is the table made of wood large or small?var1=image_patch.find('table')\nvar2=var1[0].verify_property('large') if var1 else False\nvar3=var1[0].verify_property('small') if var1 else False\nanswer='large' if var2 else 'small' if var3 else 'unknown'\n return answer \n\n",
+    "error": "Does not include information in the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "watercraft (7)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "assorted"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201765940",
+      "201765939"
+    ],
+    "equivalent": [
+      "201765941"
+    ],
+    "question": "Which kind of watercraft is assorted?",
+    "imageId": "n488874",
+    "isBalanced": true,
+    "groups": {
+      "global": "watercraft",
+      "local": "12q-watercraft_assorted"
+    },
+    "answer": "boats",
+    "semanticStr": "select: watercraft (7)->filter: assorted [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "7"
+      },
+      "question": {
+        "3": "7"
+      },
+      "fullAnswer": {
+        "1": "7",
+        "3": "7"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The watercraft is boats.",
+    "question_id": "201765941",
+    "predicted": "# Which kind of watercraft is assorted?var1=image_patch.find('assorted watercraft')\nvar2=var1[0].classify('watercraft') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shirt (4)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,wearing,s (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201766580"
+    ],
+    "equivalent": [
+      "201766579"
+    ],
+    "question": "Who is wearing a shirt?",
+    "imageId": "n528403",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-shirt_wearing,s"
+    },
+    "answer": "girl",
+    "semanticStr": "select: shirt (4)->relate: person,wearing,s (0) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "0"
+      },
+      "question": {
+        "4": "4"
+      },
+      "fullAnswer": {
+        "1": "0",
+        "5": "4"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The girl is wearing a shirt.",
+    "question_id": "201766579",
+    "predicted": "# Who is wearing a shirt?var1=image_patch.find('shirt')\nvar2=var1[0].simple_query('Who is wearing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "sky (10)"
+      },
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cloud (11) "
+      },
+      {
+        "operation": "different color",
+        "dependencies": [
+          0,
+          1
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "201972700"
+    ],
+    "equivalent": [
+      "201972701"
+    ],
+    "question": "Is the cloud different in color than the sky?",
+    "imageId": "n541482",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "09diff-cloud_sky"
+    },
+    "answer": "yes",
+    "semanticStr": "select: sky (10)->select: cloud (11) ->different color:  [0, 1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "8": "10",
+        "2": "11"
+      },
+      "fullAnswer": {
+        "2": "10",
+        "7": "11"
+      }
+    },
+    "types": {
+      "detailed": "twoDifferent",
+      "semantic": "attr",
+      "structural": "compare"
+    },
+    "fullAnswer": "Yes, the sky is blue and the cloud is white.",
+    "question_id": "201972701",
+    "predicted": "# Is the cloud different in color than the sky?var1=image_patch.find('cloud')\nvar2=image_patch.find('sky')\nvar3=var1[0].classify('color') if var1 else None\nvar4=var2[0].classify('color') if var2 else None\nanswer='yes' if var3 and var4 and (var3 != var4) else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "person (3)"
+      },
+      {
+        "operation": "filter pose",
+        "dependencies": [
+          0
+        ],
+        "argument": "standing"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "20262617"
+    ],
+    "question": "Who is standing?",
+    "imageId": "n172618",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "standing"
+    },
+    "answer": "girl",
+    "semanticStr": "select: person (3)->filter pose: standing [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "3"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "3"
+      }
+    },
+    "types": {
+      "detailed": "activityWho",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The girl is standing.",
+    "question_id": "20262617",
+    "predicted": "# Who is standing?var1=image_patch.find('standing')\nvar2=var1[0].simple_query('Who is standing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "polo shirt (3)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "man,worn on,o (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "age"
+      }
+    ],
+    "entailed": [
+      "201826550",
+      "201826552",
+      "201826553",
+      "201826549",
+      "201826539"
+    ],
+    "equivalent": [
+      "201826551"
+    ],
+    "question": "How old is the man the polo shirt is worn on?",
+    "imageId": "n59627",
+    "isBalanced": true,
+    "groups": {
+      "global": "age",
+      "local": "10q-man_age"
+    },
+    "answer": "old",
+    "semanticStr": "select: polo shirt (3)->relate: man,worn on,o (0) [0]->query: age [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "6:8": "3",
+        "4": "0"
+      },
+      "fullAnswer": {
+        "1": "0"
+      }
+    },
+    "types": {
+      "detailed": "how",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The man is old.",
+    "question_id": "201826551",
+    "predicted": "# How old is the man the polo shirt is worn on?var1=image_patch.find('polo shirt')\nvar2=var1[0].crop_position('wearing', image_patch) if var1 else None\nvar3=var2.classify('old') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "wall (13)"
+      },
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "suv (4) "
+      },
+      {
+        "operation": "same material",
+        "dependencies": [
+          0,
+          1
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "20320211",
+      "20320213"
+    ],
+    "equivalent": [
+      "20320211",
+      "20320212",
+      "20320213"
+    ],
+    "question": "Is the wall made of the same material as the SUV?",
+    "imageId": "n206358",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "09same-suv_wall"
+    },
+    "answer": "no",
+    "semanticStr": "select: wall (13)->select: suv (4) ->same material:  [0, 1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "10": "4",
+        "2": "13"
+      },
+      "fullAnswer": {
+        "9": "4",
+        "2": "13"
+      }
+    },
+    "types": {
+      "detailed": "twoSameMaterialC",
+      "semantic": "attr",
+      "structural": "compare"
+    },
+    "fullAnswer": "No, the wall is made of cement and the SUV is made of metal.",
+    "question_id": "20320212",
+    "predicted": "# Is the wall made of the same material as the SUV?var1=image_patch.find('wall')\nvar2=image_patch.find('SUV')\nvar3=var1[0].classify('material') if var1 else None\nvar4=var2[0].classify('material') if var2 else None\nanswer='yes' if var3 and var4 and (var3 == var4) else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "american flag (11)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "color"
+      }
+    ],
+    "entailed": [
+      "201188258",
+      "201188259",
+      "201188249",
+      "201188254",
+      "201188255",
+      "201188256",
+      "201188250",
+      "201188251",
+      "201188252",
+      "201188245"
+    ],
+    "equivalent": [
+      "201188253"
+    ],
+    "question": "That American flag has what color?",
+    "imageId": "n483840",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "10q-american flag_color"
+    },
+    "answer": "blue",
+    "semanticStr": "select: american flag (11)->query: color [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "1:3": "11"
+      },
+      "fullAnswer": {
+        "1:3": "11"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The American flag is blue.",
+    "question_id": "201188253",
+    "predicted": "# That American flag has what color?var1=image_patch.find('American flag')\nvar2=var1[0].classify('color') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "fence (7)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "vehicle,in front of,o (6)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20330479",
+      "20330478",
+      "20330480"
+    ],
+    "equivalent": [
+      "20330481"
+    ],
+    "question": "What vehicle is the fence in front of?",
+    "imageId": "n260521",
+    "isBalanced": true,
+    "groups": {
+      "global": "vehicle",
+      "local": "15-fence_in front of,o"
+    },
+    "answer": "car",
+    "semanticStr": "select: fence (7)->relate: vehicle,in front of,o (6) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {
+        "1": "6"
+      },
+      "fullAnswer": {
+        "1": "7",
+        "7": "6"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The fence is in front of the car.",
+    "question_id": "20330481",
+    "predicted": "# What vehicle is the fence in front of?var1=image_patch.find('fence')\nvar2=image_patch.find('vehicle')\nvar3=verify_relationship(var2[0], var1[0], 'in front') if var2 and var1 else False\nvar4=var2[0].simple_query('What vehicle is this?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "Contradicts the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "player (8)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,wearing,o (9)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201739319",
+      "201739221",
+      "201739222"
+    ],
+    "equivalent": [
+      "201739320"
+    ],
+    "question": "What is the player wearing?",
+    "imageId": "n485969",
+    "isBalanced": true,
+    "groups": {
+      "global": "clothing",
+      "local": "14-player_wearing,o"
+    },
+    "answer": "hat",
+    "semanticStr": "select: player (8)->relate: _,wearing,o (9) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "9"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "8",
+        "5": "9"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The player is wearing a hat.",
+    "question_id": "201739320",
+    "predicted": "# What is the player wearing?var1=image_patch.find('player')\nvar2=var1[0].simple_query('What is the player wearing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "bed (4)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "curtain,above,s (8)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "pillow,to the right of,s (-)"
+      },
+      {
+        "operation": "exist",
+        "dependencies": [
+          2
+        ],
+        "argument": "?"
+      }
+    ],
+    "entailed": [
+      "20753193"
+    ],
+    "equivalent": [
+      "20753194",
+      "20753193"
+    ],
+    "question": "Are there any pillows to the right of the curtain above the bed?",
+    "imageId": "n49438",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-curtain_pillow"
+    },
+    "answer": "no",
+    "semanticStr": "select: bed (4)->relate: curtain,above,s (8) [0]->relate: pillow,to the right of,s (-) [1]->exist: ? [2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "9": "8",
+        "12": "4"
+      },
+      "fullAnswer": {
+        "10": "8",
+        "4": "2"
+      }
+    },
+    "types": {
+      "detailed": "existRelSC",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, there is a boy to the right of the curtain.",
+    "question_id": "20753194",
+    "predicted": "# Are there any pillows to the right of the curtain above the bed?var1=image_patch.find('pillow')\nvar2=image_patch.find('curtain')\nvar3=image_patch.find('bed')\nvar4=verify_relationship(var1[0], var3[0], 'right') if var1 and var3 else False\nvar5=exists(var2) if var4 else False\nanswer='yes' if var5 else 'no'\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "pens (4)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "utensil,lying next to,s (5)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "color"
+      }
+    ],
+    "entailed": [
+      "20857000",
+      "20857023",
+      "20857006",
+      "20857007",
+      "20857022",
+      "20857005",
+      "20857011",
+      "20857013",
+      "20857012",
+      "20856999",
+      "20856998",
+      "20857019",
+      "20857018",
+      "20857008",
+      "20857009"
+    ],
+    "equivalent": [
+      "20857010"
+    ],
+    "question": "What is the color of the utensil that lies next to the pens?",
+    "imageId": "n293477",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "10q-spoon_color"
+    },
+    "answer": "gray",
+    "semanticStr": "select: pens (4)->relate: utensil,lying next to,s (5) [0]->query: color [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "12": "4",
+        "6": "5"
+      },
+      "fullAnswer": {
+        "1": "5"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The spoon is gray.",
+    "question_id": "20857010",
+    "predicted": "# What is the color of the utensil that lies next to the pens?var1=image_patch.find('utensil')\nvar2=image_patch.find('pens')\nvar3=verify_relationship(var1[0], var2[0], 'next to') if var1 and var2 else False\nvar4=var1[0].classify('color') if var3 else None\nanswer=var4 if var4 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "traffic light (8)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "black"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "vehicle,below,s (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201109298"
+    ],
+    "equivalent": [
+      "201109297"
+    ],
+    "question": "What is the vehicle that is below the signal light that is black?",
+    "imageId": "n167164",
+    "isBalanced": true,
+    "groups": {
+      "global": "vehicle",
+      "local": "15-traffic light_below,s"
+    },
+    "answer": "suv",
+    "semanticStr": "select: traffic light (8)->filter color: black [0]->relate: vehicle,below,s (1) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "8:10": "8",
+        "3": "1",
+        "12": "8"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "4": "1"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The vehicle is a SUV.",
+    "question_id": "201109297",
+    "predicted": "# What is the vehicle that is below the signal light that is black?var1=image_patch.find('signal light black')\nvar2=var1[0].crop_position('below', image_patch) if var1 else None\nvar3=var2.simple_query('What vehicle is this?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "chicken (18)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,sitting next to,s (0)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "animal,looking down at,s (14)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201795128",
+      "201795129",
+      "201794982",
+      "201795131",
+      "201795130",
+      "201795133"
+    ],
+    "equivalent": [
+      "201795132"
+    ],
+    "question": "What is the animal that is looking down at the person that is sitting next to the chicken called?",
+    "imageId": "n119944",
+    "isBalanced": true,
+    "groups": {
+      "global": "animal",
+      "local": "15-child_looking down at,s"
+    },
+    "answer": "elephant",
+    "semanticStr": "select: chicken (18)->relate: person,sitting next to,s (0) [0]->relate: animal,looking down at,s (14) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "14"
+      },
+      "question": {
+        "10": "0",
+        "3": "14",
+        "17": "18"
+      },
+      "fullAnswer": {
+        "1": "14",
+        "4": "14"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The animal is an elephant.",
+    "question_id": "201795132",
+    "predicted": "# What is the animal that is looking down at the person that is sitting next to the chicken called?var1=image_patch.find('looking down')\nvar2=image_patch.find('person sitting next to chicken')\nvar3=verify_relationship(var1[0], var2[0], 'looking down') if var1 and var2 else False\nvar4=var1[0].simple_query('What is the animal called?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "API Violation"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "flower (20)"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          0
+        ],
+        "argument": "yellow"
+      }
+    ],
+    "entailed": [
+      "20810854",
+      "20810851",
+      "20810853"
+    ],
+    "equivalent": [
+      "20810851",
+      "20810852",
+      "20810853"
+    ],
+    "question": "Does the flower look yellow?",
+    "imageId": "n167552",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-flower_yellow"
+    },
+    "answer": "no",
+    "semanticStr": "select: flower (20)->verify color: yellow [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "20"
+      },
+      "fullAnswer": {
+        "2": "20"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrC",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, the flower is red.",
+    "question_id": "20810852",
+    "predicted": "# Does the flower look yellow?var1=image_patch.find('flower')\nvar2=var1[0].verify_property('yellow') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cow (0)"
+      },
+      {
+        "operation": "verify rel",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,to the right of,s (6)"
+      }
+    ],
+    "entailed": [
+      "201976949",
+      "201976948",
+      "201976945",
+      "201976944",
+      "201976947",
+      "201976946",
+      "201976942"
+    ],
+    "equivalent": [
+      "201976943"
+    ],
+    "question": "Is the male person to the right of a cow?",
+    "imageId": "n279173",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "13-cow_person"
+    },
+    "answer": "no",
+    "semanticStr": "select: cow (0)->verify rel: person,to the right of,s (6) [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "9": "0",
+        "2:4": "6"
+      },
+      "fullAnswer": {
+        "9": "0",
+        "2": "6"
+      }
+    },
+    "types": {
+      "detailed": "relVerifyCr",
+      "semantic": "rel",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, the person is to the left of a cow.",
+    "question_id": "201976943",
+    "predicted": "# Is the male person to the right of a cow?var1=image_patch.find('male person')\nvar2=image_patch.find('cow')\nvar3=verify_relationship(var1[0], var2[0], 'right') if var1 and var2 else False\nanswer='yes' if var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "book (4)"
+      },
+      {
+        "operation": "verify",
+        "dependencies": [
+          0
+        ],
+        "argument": "closed"
+      }
+    ],
+    "entailed": [
+      "20381487",
+      "20381488",
+      "20381470",
+      "20381493",
+      "20381492",
+      "20381491",
+      "20381497",
+      "20381482",
+      "20381485",
+      "20381486"
+    ],
+    "equivalent": [
+      "20381490"
+    ],
+    "question": "Does the book look closed?",
+    "imageId": "n398257",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-book_closed"
+    },
+    "answer": "yes",
+    "semanticStr": "select: book (4)->verify: closed [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "4"
+      },
+      "fullAnswer": {
+        "2": "4"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrK",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the book is closed.",
+    "question_id": "20381490",
+    "predicted": "# Does the book look closed?var1=image_patch.find('book')\nvar2=var1[0].verify_property('closed') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "floor (10)"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          0
+        ],
+        "argument": "blue"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "201393419"
+    ],
+    "question": "Does the floor look blue?",
+    "imageId": "n305495",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-floor_blue"
+    },
+    "answer": "no",
+    "semanticStr": "select: floor (10)->verify color: blue [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "10"
+      },
+      "fullAnswer": {
+        "2": "10"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrC",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "No, the floor is brown.",
+    "question_id": "201393419",
+    "predicted": "# Does the floor look blue?var1=image_patch.find('floor')\nvar2=var1[0].verify_property('blue') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cup (2)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "fruit,behind,o (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201479103",
+      "201479102",
+      "201479321"
+    ],
+    "equivalent": [
+      "201479320"
+    ],
+    "question": "What is the fruit that the cup is behind of?",
+    "imageId": "n181210",
+    "isBalanced": true,
+    "groups": {
+      "global": "color",
+      "local": "15-cup_behind,o"
+    },
+    "answer": "orange",
+    "semanticStr": "select: cup (2)->relate: fruit,behind,o (1) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "3": "1",
+        "6": "2"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "4": "1"
+      }
+    },
+    "types": {
+      "detailed": "categoryRelO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The fruit is an orange.",
+    "question_id": "201479320",
+    "predicted": "# What is the fruit that the cup is behind of?var1=image_patch.find('cup')\nvar2=var1[0].crop_position('behind', image_patch) if var1 else None\nvar3=var2.simple_query('What is the fruit?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "curtain (17)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,in front of,o (11)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201174999",
+      "201175000",
+      "201175274"
+    ],
+    "equivalent": [
+      "201175275"
+    ],
+    "question": "What is the curtain in front of?",
+    "imageId": "n357784",
+    "isBalanced": true,
+    "groups": {
+      "global": "urban environment",
+      "local": "14-curtain_in front of,o"
+    },
+    "answer": "window",
+    "semanticStr": "select: curtain (17)->relate: _,in front of,o (11) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "11"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "17",
+        "7": "11"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The curtain is in front of the window.",
+    "question_id": "201175275",
+    "predicted": "# What is the curtain in front of?var1=image_patch.find('curtain')\nvar2=verify_relationship(var1[0], image_patch, 'in front') if var1 else False\nvar3=var1[0].simple_query('What is the curtain in front of?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "mountain (1)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "airplane,above,s (2)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "_,higher than,o (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20299587",
+      "20299676",
+      "20299679",
+      "20299678"
+    ],
+    "equivalent": [
+      "20299677",
+      "20299676"
+    ],
+    "question": "The plane above the mountain is higher than what?",
+    "imageId": "n195925",
+    "isBalanced": true,
+    "groups": {
+      "global": "",
+      "local": "14-airplane_higher than,o"
+    },
+    "answer": "bridge",
+    "semanticStr": "select: mountain (1)->relate: airplane,above,s (2) [0]->relate: _,higher than,o (0) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "0"
+      },
+      "question": {
+        "1": "2",
+        "4": "1"
+      },
+      "fullAnswer": {
+        "1": "2",
+        "6": "0"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The airplane is higher than the bridge.",
+    "question_id": "20299677",
+    "predicted": "# The plane above the mountain is higher than what?var1=image_patch.find('plane')\nvar2=image_patch.find('mountain')\nvar3=verify_relationship(var1[0], var2[0], 'above') if var1 and var2 else False\nvar4=var1[0].simple_query('What is the plane above the mountain higher than?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "device (8)"
+      },
+      {
+        "operation": "filter color",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(silver)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201902746",
+      "201902748",
+      "201902749",
+      "201902921"
+    ],
+    "equivalent": [
+      "201902748",
+      "201902746",
+      "201902747"
+    ],
+    "question": "What is the device that is not silver?",
+    "imageId": "n435808",
+    "isBalanced": true,
+    "groups": {
+      "global": "device",
+      "local": "12q-device_n#silver"
+    },
+    "answer": "keyboard",
+    "semanticStr": "select: device (8)->filter color: not(silver) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "8"
+      },
+      "question": {
+        "3": "4"
+      },
+      "fullAnswer": {
+        "1": "4",
+        "4": "8"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The device is a keyboard.",
+    "question_id": "201902747",
+    "predicted": "# What is the device that is not silver?var1=image_patch.find('silver device')\nvar2=filter_img(image_patch.find('device'), 'silver')\nvar3=var2[0].simple_query('What is the device you are looking for?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Contradicts the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "skateboard (0)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,using,s (5)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "20588925"
+    ],
+    "question": "Who is using the skateboard?",
+    "imageId": "n258500",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-skateboard_using,s"
+    },
+    "answer": "skater",
+    "semanticStr": "select: skateboard (0)->relate: person,using,s (5) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "5"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "5",
+        "5": "0"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The skater is using the skateboard.",
+    "question_id": "20588925",
+    "predicted": "# Who is using the skateboard?var1=image_patch.find('skateboard')\nvar2=var1[0].simple_query('Who is using the skateboard?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "stroller (10)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "table,to the left of,s (17)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "_,in front of,s (12)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201758235",
+      "201758234",
+      "201758236",
+      "201758525",
+      "201758332",
+      "201758333",
+      "201758334",
+      "201758524"
+    ],
+    "equivalent": [
+      "201758331"
+    ],
+    "question": "What is in front of the table that is to the left of the stroller?",
+    "imageId": "n4777",
+    "isBalanced": true,
+    "groups": {
+      "global": "furniture",
+      "local": "14-table_in front of,s"
+    },
+    "answer": "chair",
+    "semanticStr": "select: stroller (10)->relate: table,to the left of,s (17) [0]->relate: _,in front of,s (12) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "12"
+      },
+      "question": {
+        "14": "10",
+        "6": "17"
+      },
+      "fullAnswer": {
+        "1": "12",
+        "7": "17"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The chair is in front of the table.",
+    "question_id": "201758331",
+    "predicted": "# What is in front of the table that is to the left of the stroller?var1=image_patch.find('table')\nvar2=image_patch.find('stroller')\nvar3=verify_relationship(var1[0], var2[0], 'left') if var1 and var2 else False\nvar4=var1[0].simple_query('What is in front of the table?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "ground (8)"
+      },
+      {
+        "operation": "verify color",
+        "dependencies": [
+          0
+        ],
+        "argument": "brown"
+      },
+      {
+        "operation": "verify",
+        "dependencies": [
+          0
+        ],
+        "argument": "rocky "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          1,
+          2
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "201185969",
+      "201185968",
+      "201185958",
+      "201185959",
+      "201185954",
+      "201185955",
+      "201185956",
+      "201185957",
+      "201185965",
+      "201185967",
+      "201185964",
+      "201185953",
+      "201185961",
+      "201185972",
+      "201185952",
+      "201185970",
+      "201185971",
+      "201185960",
+      "201185966",
+      "201185963"
+    ],
+    "equivalent": [
+      "201185951"
+    ],
+    "question": "Does the ground look brown and rocky?",
+    "imageId": "n494918",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-brown_rocky"
+    },
+    "answer": "yes",
+    "semanticStr": "select: ground (8)->verify color: brown [0]->verify: rocky  [0]->and:  [1, 2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "8"
+      },
+      "fullAnswer": {
+        "2": "8"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrs",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "Yes, the ground is brown and rocky.",
+    "question_id": "201185951",
+    "predicted": "# Does the ground look brown and rocky?var1=image_patch.find('ground')\nvar2=var1[0].verify_property('brown') if var1 else False\nvar3=var1[0].verify_property('rocky') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "bat (11)"
+      },
+      {
+        "operation": "verify hardness",
+        "dependencies": [
+          0
+        ],
+        "argument": "hard"
+      },
+      {
+        "operation": "verify material",
+        "dependencies": [
+          0
+        ],
+        "argument": "metal "
+      },
+      {
+        "operation": "and",
+        "dependencies": [
+          1,
+          2
+        ],
+        "argument": ""
+      }
+    ],
+    "entailed": [
+      "201156039",
+      "201156040"
+    ],
+    "equivalent": [
+      "201156041",
+      "201156040",
+      "201156039"
+    ],
+    "question": "Does the bat look hard and metallic?",
+    "imageId": "n146522",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "05-hard_metal"
+    },
+    "answer": "no",
+    "semanticStr": "select: bat (11)->verify hardness: hard [0]->verify material: metal  [0]->and:  [1, 2]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "11"
+      },
+      "fullAnswer": {
+        "2": "11"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttrsC",
+      "semantic": "attr",
+      "structural": "logical"
+    },
+    "fullAnswer": "No, the bat is hard but wooden.",
+    "question_id": "201156041",
+    "predicted": "# Does the bat look hard and metallic?var1=image_patch.find('bat')\nvar2=var1[0].verify_property('hard') if var1 else False\nvar3=var1[0].verify_property('metallic') if var1 else False\nanswer='yes' if var2 and var3 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "dessert (4)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "sweet"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "_,sitting beside,o (1)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201988049",
+      "201988048",
+      "201988045",
+      "201988044",
+      "201988047",
+      "201988046",
+      "201988042",
+      "201987709",
+      "201987710",
+      "201987711",
+      "201987712"
+    ],
+    "equivalent": [
+      "201988043"
+    ],
+    "question": "What is the sweet dessert sitting beside?",
+    "imageId": "n470131",
+    "isBalanced": true,
+    "groups": {
+      "global": "food",
+      "local": "14-cake_sitting beside,o"
+    },
+    "answer": "cookie",
+    "semanticStr": "select: dessert (4)->filter: sweet [0]->relate: _,sitting beside,o (1) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "3:5": "4"
+      },
+      "fullAnswer": {
+        "1": "4",
+        "6": "1"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The cake is sitting beside the cookie.",
+    "question_id": "201988043",
+    "predicted": "# What is the sweet dessert sitting beside?var1=image_patch.find('sweet dessert')\nvar2=verify_relationship(var1[0], image_patch, 'beside') if var1 else False\nvar3=var1[0].simple_query('What is the sweet dessert sitting beside?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error": "Does not answer the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "trees (6)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "people,near,s (1)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "person,in front of,s (0)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20412151"
+    ],
+    "equivalent": [
+      "20412150"
+    ],
+    "question": "Who is in front of the people near the trees?",
+    "imageId": "n531359",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-people_in front of,s"
+    },
+    "answer": "boy",
+    "semanticStr": "select: trees (6)->relate: people,near,s (1) [0]->relate: person,in front of,s (0) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "0"
+      },
+      "question": {
+        "9": "6",
+        "6": "1"
+      },
+      "fullAnswer": {
+        "1": "0",
+        "7": "1"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The boy is in front of the people.",
+    "question_id": "20412150",
+    "predicted": "# Who is in front of the people near the trees?var1=image_patch.find('person')\nvar2=image_patch.find('trees')\nvar3=verify_relationship(var1[0], var2[0], 'in front') if var1 and var2 else False\nvar4=var1[0].simple_query('Who is this?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "Contradicts the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "shirt (7)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "person,wearing,s (6)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "20891705"
+    ],
+    "equivalent": [
+      "20891704"
+    ],
+    "question": "Who is wearing a shirt?",
+    "imageId": "n347706",
+    "isBalanced": true,
+    "groups": {
+      "global": "person",
+      "local": "14-shirt_wearing,s"
+    },
+    "answer": "man",
+    "semanticStr": "select: shirt (7)->relate: person,wearing,s (6) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "6"
+      },
+      "question": {
+        "4": "7"
+      },
+      "fullAnswer": {
+        "1": "6",
+        "5": "7"
+      }
+    },
+    "types": {
+      "detailed": "relS",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The man is wearing a shirt.",
+    "question_id": "20891704",
+    "predicted": "# Who is wearing a shirt?var1=image_patch.find('shirt')\nvar2=var1[0].simple_query('Who is wearing?') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "watch (4)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          0
+        ],
+        "argument": "shape"
+      }
+    ],
+    "entailed": [
+      "201640480",
+      "201640481",
+      "201640482",
+      "201640483",
+      "201640484",
+      "201640485",
+      "201640487",
+      "201640488",
+      "201640489",
+      "201640469",
+      "201640491",
+      "201640490",
+      "201640476",
+      "201640440",
+      "201640454",
+      "201640478",
+      "201640441"
+    ],
+    "equivalent": [
+      "201640486"
+    ],
+    "question": "What shape is that watch?",
+    "imageId": "n235859",
+    "isBalanced": true,
+    "groups": {
+      "global": "shape",
+      "local": "10q-watch_shape"
+    },
+    "answer": "square",
+    "semanticStr": "select: watch (4)->query: shape [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "4"
+      },
+      "fullAnswer": {
+        "1": "4"
+      }
+    },
+    "types": {
+      "detailed": "directOf",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The watch is square.",
+    "question_id": "201640486",
+    "predicted": "# What shape is that watch?var1=image_patch.find('watch')\nvar2=var1[0].classify('shape') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "pipe (6)"
+      },
+      {
+        "operation": "choose material",
+        "dependencies": [
+          0
+        ],
+        "argument": "plastic|chrome"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "201429134"
+    ],
+    "question": "Which material was used to make the pipe, plastic or chrome?",
+    "imageId": "n64959",
+    "isBalanced": true,
+    "groups": {
+      "global": "material",
+      "local": "10c-pipe_material"
+    },
+    "answer": "plastic",
+    "semanticStr": "select: pipe (6)->choose material: plastic|chrome [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "7": "6"
+      },
+      "fullAnswer": {
+        "1": "6"
+      }
+    },
+    "types": {
+      "detailed": "materialChoose",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The pipe is made of plastic.",
+    "question_id": "201429134",
+    "predicted": "# Which material was used to make the pipe, plastic or chrome?var1=image_patch.find('pipe')\nvar2=var1[0].classify('material') if var1 else None\nanswer='plastic' if var2 == 'plastic' else 'chrome' if var2 == 'chrome' else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "leaves (18)"
+      },
+      {
+        "operation": "verify state",
+        "dependencies": [
+          0
+        ],
+        "argument": "still"
+      }
+    ],
+    "entailed": [
+      "20797619",
+      "20797621",
+      "20797618"
+    ],
+    "equivalent": [
+      "20797620"
+    ],
+    "question": "Are the leaves still?",
+    "imageId": "n16656",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "06-leaves_still"
+    },
+    "answer": "yes",
+    "semanticStr": "select: leaves (18)->verify state: still [0]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "2": "18"
+      },
+      "fullAnswer": {
+        "2": "18"
+      }
+    },
+    "types": {
+      "detailed": "verifyAttr",
+      "semantic": "attr",
+      "structural": "verify"
+    },
+    "fullAnswer": "Yes, the leaves are still.",
+    "question_id": "20797620",
+    "predicted": "# Are the leaves still?var1=image_patch.find('leaves')\nvar2=var1[0].verify_property('still') if var1 else False\nanswer='yes' if var2 else 'no'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "skier (8)"
+      },
+      {
+        "operation": "filter",
+        "dependencies": [
+          0
+        ],
+        "argument": "not(short)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          1
+        ],
+        "argument": "place,standing on,o (10)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          2
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [],
+    "equivalent": [
+      "201412511"
+    ],
+    "question": "Where is the skier that is not short standing on?",
+    "imageId": "n143672",
+    "isBalanced": true,
+    "groups": {
+      "global": "nature environment",
+      "local": "14-skier_standing on,o"
+    },
+    "answer": "ground",
+    "semanticStr": "select: skier (8)->filter: not(short) [0]->relate: place,standing on,o (10) [1]->query: name [2]",
+    "annotations": {
+      "answer": {
+        "0": "10"
+      },
+      "question": {
+        "3": "8",
+        "7": "8"
+      },
+      "fullAnswer": {
+        "1": "8",
+        "6": "10"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The skier is standing on the ground.",
+    "question_id": "201412511",
+    "predicted": "# Where is the skier that is not short standing on?var1=image_patch.find('skier')\nvar2=var1[0].verify_property('short') if var1 else True\nvar3=var1[0].crop_position('not standing', image_patch) if var2 else None\nvar4=var3.simple_query('Where is the skier standing on?') if var3 else 'unknown'\nanswer=var4\n return answer \n\n",
+    "error": "Contradicts the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "clothing (1)"
+      },
+      {
+        "operation": "filter weight",
+        "dependencies": [
+          0
+        ],
+        "argument": "heavy"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "201759213",
+      "201759214",
+      "201759215"
+    ],
+    "equivalent": [
+      "201759216"
+    ],
+    "question": "Which kind of clothing is heavy?",
+    "imageId": "n150962",
+    "isBalanced": true,
+    "groups": {
+      "global": "clothing",
+      "local": "12q-clothing_heavy"
+    },
+    "answer": "coats",
+    "semanticStr": "select: clothing (1)->filter weight: heavy [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "1"
+      },
+      "question": {
+        "3": "1"
+      },
+      "fullAnswer": {
+        "1": "1",
+        "3": "1"
+      }
+    },
+    "types": {
+      "detailed": "categoryThat",
+      "semantic": "cat",
+      "structural": "query"
+    },
+    "fullAnswer": "The clothing is coats.",
+    "question_id": "201759216",
+    "predicted": "# Which kind of clothing is heavy?var1=image_patch.find('heavy clothing')\nvar2=var1[0].classify('clothing') if var1 else None\nanswer=var2 if var2 else 'unknown'\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "cupboards (11)"
+      },
+      {
+        "operation": "filter material",
+        "dependencies": [
+          0
+        ],
+        "argument": "wood"
+      },
+      {
+        "operation": "choose",
+        "dependencies": [
+          1
+        ],
+        "argument": "closed|open"
+      }
+    ],
+    "entailed": [
+      "201623358",
+      "201623357",
+      "201623356",
+      "201623340",
+      "201623354",
+      "201623353",
+      "201623352",
+      "201623362",
+      "201623338",
+      "201623339"
+    ],
+    "equivalent": [
+      "201623359",
+      "201623358",
+      "201623357"
+    ],
+    "question": "Do you think the cupboards made of wood are closed or open?",
+    "imageId": "n501609",
+    "isBalanced": true,
+    "groups": {
+      "global": "15",
+      "local": "10c-cupboards_15"
+    },
+    "answer": "closed",
+    "semanticStr": "select: cupboards (11)->filter material: wood [0]->choose: closed|open [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "4": "11",
+        "7": "11"
+      },
+      "fullAnswer": {
+        "1": "11"
+      }
+    },
+    "types": {
+      "detailed": "chooseAttr",
+      "semantic": "attr",
+      "structural": "choose"
+    },
+    "fullAnswer": "The cupboards are closed.",
+    "question_id": "201623359",
+    "predicted": "# Do you think the cupboards made of wood are closed or open?var1=image_patch.find('cupboards')\nvar2=var1[0].verify_property('closed') if var1 else False\nvar3=var1[0].verify_property('open') if var1 else False\nanswer='closed' if var2 else 'open' if var3 else 'unknown'\n return answer \n\n",
+    "error": "Does not include information in the question"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "person (7)"
+      },
+      {
+        "operation": "filter age",
+        "dependencies": [
+          0
+        ],
+        "argument": "old"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "hposition"
+      }
+    ],
+    "entailed": [
+      "20473134",
+      "20473135",
+      "20473136",
+      "20473130",
+      "20473131",
+      "20473132",
+      "20473133",
+      "20473129"
+    ],
+    "equivalent": [
+      "20473137"
+    ],
+    "question": "In which part is the old person?",
+    "imageId": "n126891",
+    "isBalanced": true,
+    "groups": {
+      "global": null,
+      "local": "10q-woman_hposition"
+    },
+    "answer": "right",
+    "semanticStr": "select: person (7)->filter age: old [0]->query: hposition [1]",
+    "annotations": {
+      "answer": {},
+      "question": {
+        "5:7": "7"
+      },
+      "fullAnswer": {
+        "1": "7"
+      }
+    },
+    "types": {
+      "detailed": "positionQuery",
+      "semantic": "attr",
+      "structural": "query"
+    },
+    "fullAnswer": "The woman is on the right of the image.",
+    "question_id": "20473137",
+    "predicted": "# In which part is the old person?var1=image_patch.find('old person')\nvar2=var1[0].classify('part') if var1 else 'unknown'\nanswer=var2\n return answer \n\n"
+  },
+  {
+    "semantic": [
+      {
+        "operation": "select",
+        "dependencies": [],
+        "argument": "grass (1)"
+      },
+      {
+        "operation": "relate",
+        "dependencies": [
+          0
+        ],
+        "argument": "_,in front of,o (2)"
+      },
+      {
+        "operation": "query",
+        "dependencies": [
+          1
+        ],
+        "argument": "name"
+      }
+    ],
+    "entailed": [
+      "202156791"
+    ],
+    "equivalent": [
+      "202156792"
+    ],
+    "question": "What is the grass in front of?",
+    "imageId": "n543966",
+    "isBalanced": true,
+    "groups": {
+      "global": "thing",
+      "local": "14-grass_in front of,o"
+    },
+    "answer": "rocks",
+    "semanticStr": "select: grass (1)->relate: _,in front of,o (2) [0]->query: name [1]",
+    "annotations": {
+      "answer": {
+        "0": "2"
+      },
+      "question": {},
+      "fullAnswer": {
+        "1": "1",
+        "7": "2"
+      }
+    },
+    "types": {
+      "detailed": "relO",
+      "semantic": "rel",
+      "structural": "query"
+    },
+    "fullAnswer": "The grass is in front of the rocks.",
+    "question_id": "202156792",
+    "predicted": "# What is the grass in front of?var1=image_patch.find('grass')\nvar2=verify_relationship(var1[0], image_patch, 'in front') if var1 else False\nvar3=var1[0].simple_query('What is the grass in front of?') if var2 else 'unknown'\nanswer=var3\n return answer \n\n",
+    "error":"API Violation"
+  }
+]
