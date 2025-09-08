@@ -9,7 +9,7 @@ Program correctness annotations (whether or not a program is correct) are under 
 ### Code 
 Coming soon 
 
-# Citation
+### Citation
 If you use this work or find it helpful, please consider citing: (bibtex)
 ```
 @inproceedings{regions,
